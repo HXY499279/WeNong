@@ -1,0 +1,12 @@
+<view class="wraper {{last}}">
+  <view class="left">
+    <text class="item-name">{{itemName}}</text>
+  </view>
+  <view class="right">
+    <view bindtap="clickFunction">
+      <image class="head-img" wx:if="{{isPic}}" src="{{value}}"></image>
+      <text class="content" wx:else>{{value}}</text>
+      <van-icon class="more-icon" wx:if="{{canChanged}}" name="arrow" />
+    </view>
+  </view>
+</view>

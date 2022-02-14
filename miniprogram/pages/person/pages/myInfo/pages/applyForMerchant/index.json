@@ -1,0 +1,9 @@
+{
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#63BC51",
+  "backgroundColorTop": "#63BC51",
+  "navigationBarTitleText":"申请成为商家",
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

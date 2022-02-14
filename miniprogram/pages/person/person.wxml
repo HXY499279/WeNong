@@ -1,0 +1,3 @@
+<nav-bar></nav-bar>
+<view class="backgroud-circle"></view>
+<login-status-frame isLogin="{{isLogin}}" userInfo="{{userInfo}}"></login-status-frame>

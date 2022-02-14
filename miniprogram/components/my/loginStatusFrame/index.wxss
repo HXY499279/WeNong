@@ -1,0 +1,51 @@
+.wraper {
+  display: flex;
+  align-items: center;
+  width: 92%;
+  height: 180rpx;
+  padding: 30rpx;
+  line-height: 180rpx;
+  background-color: white;
+  margin: 20rpx auto;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.head-img {
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 30px;
+  background-color: rgb(23, 187, 97);
+}
+
+.user-detail {
+  width: 290rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  position: relative;
+}
+
+.user-name,
+.user-identify {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-word !important;
+}
+
+.user-name {
+  bottom: -8rpx;
+}
+
+.user-identify {
+  bottom: -55rpx;
+}
+
+.operate {
+  color: rgb(206, 203, 203);
+
+}

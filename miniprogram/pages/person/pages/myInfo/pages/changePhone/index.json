@@ -1,0 +1,8 @@
+{
+  "navigationStyle":"default",
+  "navigationBarTitleText":"更换手机号",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-count-down": "@vant/weapp/count-down/index"
+  }
+}

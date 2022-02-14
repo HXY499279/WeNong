@@ -1,0 +1,9 @@
+<van-tabbar active="{{ active }}" bind:change="onChange" active-color="{{selectedColor}}" inactive-color="{{color}}">
+  <van-tabbar-item wx:for="{{ list }}" wx:key="index">
+    <image slot="icon" src="{{ item.icon }}" mode="aspectFit"
+      style="width: 42px; height: 25.2px; margin-bottom: -3px" />
+    <image slot="icon-active" src="{{ item['icon-active'] }}" mode="aspectFit"
+      style="width: 42px; height: 25.2px; margin-bottom: -3px" />
+    {{item.text}}
+  </van-tabbar-item>
+</van-tabbar>

@@ -1,0 +1,41 @@
+<view class="background">
+</view>
+<view class="wraper">
+  <view class="title">
+    <image class="title-logo" src="../../../../../../resources/logo-t.png"></image>
+    <view>we农商家申请表</view>
+  </view>
+  <view class="table-wraper">
+    <form bindsubmit="bindFormSubmit">
+      <view class="item" wx:for="{{pageInputData}}" wx:key="index">
+        <text class="item-name">
+          {{item.name}}
+        </text>
+        <input name="{{item.dataName}}" type="{{item.type}}" class="item-ipt" placeholder="{{item.placeholder}}" />
+      </view>
+      <picker name="city" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="item">
+          <text class="item-name">
+            店铺所在城市
+          </text>
+          <view class="item-ipt">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+        </view>
+      </picker>
+      <view class="item">
+        <text class="item-name">
+          店铺详细地址
+        </text>
+        <input name="address" type="text" class="item-ipt" placeholder="请输入您的店铺详细地址" bindinput="" />
+      </view>
+      <view class="item item-images">
+        <text class="item-name">
+          店铺认证报告
+        </text>
+        <view class="images">
+          <van-uploader name="certificationReport" bind:after-read="afterRead" file-list="{{ fileList }}" bind:delete="deleteImage" />
+        </view>
+      </view>
+      <button class="submit-btn" form-type="submit"> 提交 </button>
+    </form>
+  </view>
+</view>

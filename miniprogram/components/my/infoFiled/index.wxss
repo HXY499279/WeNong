@@ -1,0 +1,26 @@
+.wraper{
+  width: 100%;
+  height: 110rpx;
+  border-bottom: 1px solid silver;
+  padding: 0 20rpx;
+  line-height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.last{
+  border: none;
+}
+.item-name{
+  font-size: 18px;
+}
+.head-img {
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 150rpx;
+  border-radius: 50%;
+}
+.more-icon{
+  margin-left: 20rpx;
+  font-size: 20px;
+}

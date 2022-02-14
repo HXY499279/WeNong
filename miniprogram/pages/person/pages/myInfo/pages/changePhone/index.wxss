@@ -1,0 +1,53 @@
+.wraper {
+  width: 80%;
+  margin: 150rpx auto 0;
+}
+
+.title {
+  font-size: 25px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+
+.phone-input,
+.code-input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100rpx;
+  border-bottom: 1px solid silver;
+}
+
+.phone-input>input,
+.code-input>input {
+  width: 90%;
+  padding: 0 40rpx;
+}
+
+.code-input>input {
+  width: 60%;
+}
+
+.get-code{
+  color: rgb(25,137,250);
+}
+
+.count-down{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+  color: rgb(179, 179, 179);
+}
+
+.control-count-down{
+  margin-right: 2px;
+}
+
+.dw{
+  position: relative;
+  top: -2px;
+}
+
+.count-down view {
+  color: rgb(179, 179, 179);
+  font-size: 16px !important;
+}

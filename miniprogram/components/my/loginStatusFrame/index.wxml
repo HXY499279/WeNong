@@ -1,0 +1,21 @@
+<view class="wraper">
+  <view>
+    <view wx:if="{{isLogin}}" class="head-img">
+      <image class="head-img" src="{{userInfo.avatarUrl}}" />
+    </view>
+    <view wx:else class="head-img">
+      U
+    </view>
+  </view>
+  <view class="user-detail">
+    <view wx:if="{{isLogin}}">
+      <text class="user-name">{{userInfo.nickName}}</text>
+      <text class="user-identify">身份：{{userInfo.identity}}</text>
+    </view>
+  </view>
+  <view class="operate">
+    <van-icon wx:if="{{isLogin}}" bindtap="enterMyInfo" size="25px" color="black" custom-style="margin-left:160rpx;" name="arrow" />
+    <van-button wx:else round type="primary" custom-style="width:180rpx;height:80rpx;color:rgb(107, 107, 107);border:1px solid rgb(203, 203, 203);font-size:16px" color="white" size="small" bind:click="onClick">登录
+    </van-button>
+  </view>
+</view>

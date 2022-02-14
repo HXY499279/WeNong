@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle":"light",
+  "backgroundColorTop": "#63BC51",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "login-status-frame": "/components/my/loginStatusFrame/index"
+  }
+}

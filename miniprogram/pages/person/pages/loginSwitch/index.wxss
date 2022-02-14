@@ -1,0 +1,14 @@
+.wraper{
+  width: 90%;
+  margin: 190rpx auto 0;
+}
+.logo{
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto 190rpx;
+  color: rgb(231, 229, 229);
+}
+.text{
+  color: rgb(153, 153, 153);
+}
