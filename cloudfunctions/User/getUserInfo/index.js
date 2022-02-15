@@ -17,7 +17,18 @@ exports.main = async (event, context) => {
 
   if (users.length) {
     if (users[0].merchantId) {
-      users[0].identity = "用户/商家"
+      const { result = {} } = await cloud.callFunction({
+        name: "Merchant",
+        data: {
+          type: "getMerchantInfo",
+          OPENID
+        }
+      })
+      if (result.data.merchantInfo.status === 3) {
+        users[0].identity = "用户/商家"
+      } else {
+        users[0].identity = "用户"
+      }
       return { status: 1, data: { userInfo: users[0] }, message: "获取用户信息成功" }
     } else {
       users[0].identity = "用户"

@@ -1,4 +1,8 @@
 {
-  "navigationStyle":"custom",
-  "usingComponents": {}
+  "navigationStyle": "default",
+  "navigationBarTitleText": "我的店铺",
+  "usingComponents": {
+    "page-loading": "/components/pageLoading/index",
+    "checking": "/components/my/checking/index"
+  }
 }

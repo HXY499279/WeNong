@@ -3,6 +3,7 @@
   "navigationBarTitleText":"用户资料",
   "usingComponents": {
     "info-filed":"/components/my/infoFiled/index",
+    "page-loading": "/components/pageLoading/index",
     "van-button": "@vant/weapp/button/index",
     "van-skeleton": "@vant/weapp/skeleton/index"
   }

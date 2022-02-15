@@ -14,7 +14,14 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/person/pages/myInfo/index",
+          "pathName": "pages/person/person",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        },
+        {
+          "name": "",
+          "pathName": "pages/person/pages/myShop/index",
           "query": "",
           "scene": null,
           "launchMode": "default"

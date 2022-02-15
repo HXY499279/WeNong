@@ -1,0 +1,9 @@
+<view class="wraper">
+  <view class="item" wx:for="{{myItems}}" wx:key="index" bindtap="{{item.onTap}}">
+    <view class="left">
+      <van-icon class="left-icon" name="{{item.icon}}" />
+      <text class="left-title">{{item.title}}</text>
+    </view>
+    <van-icon class="right-icon" name="arrow" />
+  </view>
+</view>

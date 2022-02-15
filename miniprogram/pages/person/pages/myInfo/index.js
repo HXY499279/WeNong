@@ -204,6 +204,27 @@ Page({
             userInfo,
             canNotChangedUserInfo,
             canChangedUserInfo,
+          }, () => {
+            // 等用户信息整理获取完毕后，再获取商家信息，后取消loading
+            if (userInfo.merchantId) {
+              httpUtil.getMerchantInfo()
+                .then(res => {
+                  const merchantInfo = res.data.merchantInfo
+                  this.setData({
+                    merchantInfo,
+                    loading: false
+                  })
+                }, err => {
+                  this.setData({
+                    merchantInfo: {},
+                    loading: false
+                  })
+                })
+            } else {
+              this.setData({
+                loading: false
+              })
+            }
           })
         }, (err) => {
           wx.showToast({
@@ -212,20 +233,7 @@ Page({
           })
         })
     }
-    httpUtil.getMerchantInfo()
-      .then(res => {
-        const merchantInfo = res.data.merchantInfo
-        console.log(merchantInfo);
-        this.setData({
-          merchantInfo,
-          loading: false
-        })
-      }, err => {
-        this.setData({
-          merchantInfo: {},
-          loading: false
-        })
-      })
+
   },
 
   /**

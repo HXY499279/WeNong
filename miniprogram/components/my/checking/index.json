@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-steps": "@vant/weapp/steps/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

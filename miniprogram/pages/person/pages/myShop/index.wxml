@@ -1,2 +1,8 @@
-<nav-bar></nav-bar>
-
+<page-loading wx:if="{{loading}}"></page-loading>
+<view wx:else class="wraper">
+  <view wx:if="{{canEnterShop}}">
+  </view>
+  <view wx:else>
+    <checking merchantInfo="{{merchantInfo}}" />
+  </view>
+</view>

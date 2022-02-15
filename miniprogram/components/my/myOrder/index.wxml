@@ -1,0 +1,12 @@
+<view class="wraper">
+  <view class="top">
+    <text class="top-title">我的订单</text>
+    <van-icon class="top-enter" name="arrow" />
+  </view>
+  <view class="bottom">
+    <view class="order-item" wx:for="{{orderItems}}" wx:key="index">
+      <image class="order-item-icon" src="{{item.icon}}"></image>
+      <text class="order-item-title">{{item.title}}</text>
+    </view>
+  </view>
+</view>

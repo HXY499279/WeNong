@@ -30,13 +30,14 @@ Page({
     const OPENID = wx.getStorageSync('hasLoginOPENID')
     if (OPENID) {
       this.setData({ isLogin: true })
-      if (!this.data.userInfo) {
-        httpUtil.getUserInfo({ OPENID })
-          .then(res => {
-            const userInfo = res.data.userInfo
-            this.setData({ userInfo })
-          })
-      }
+      // if (!this.data.userInfo) {
+      // 暂时关闭缓存，每次到我的页面就发送请求获取数据
+      httpUtil.getUserInfo({ OPENID })
+        .then(res => {
+          const userInfo = res.data.userInfo
+          this.setData({ userInfo })
+        })
+      // }
     } else {
       this.setData({ isLogin: false })
     }

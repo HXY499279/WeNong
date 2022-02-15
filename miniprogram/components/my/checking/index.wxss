@@ -1,0 +1,60 @@
+.wraper {
+  padding-top: 20rpx;
+}
+
+.steps {
+  padding: 20rpx;
+  border-top: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.result {
+  margin-top: 80rpx;
+  border-top: 1px solid rgb(231, 231, 231);
+}
+
+.result-report {
+  padding: 50rpx 40rpx;
+}
+
+.report-item {
+  display: flex;
+  align-items: flex-start;
+  height: 100rpx;
+}
+
+.report-item-name {
+  display: inline-block;
+  width: 160rpx;
+  margin-right: 10rpx;
+}
+
+.report-item-content-success {
+  color: rgb(0, 167, 0);
+  font-size: 19px;
+}
+
+.report-item-content-fail {
+  color: rgb(206, 0, 0);
+  font-size: 19px;
+}
+
+.report-item-content-no-content {
+  color: silver;
+}
+
+.report-item-fail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: auto;
+}
+
+.report-item-content-checkedResult {
+  width: 500rpx;
+}
+
+.btn{
+  width: 80%;
+  margin: 100rpx auto 80rpx;
+}

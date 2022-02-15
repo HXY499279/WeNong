@@ -1,0 +1,31 @@
+.wraper {
+  width: 92%;
+  padding: 30rpx;
+  margin: 20rpx auto;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.item:last-child {
+  border: none;
+}
+
+.left-title {
+  margin-left: 10rpx;
+}
+
+.left-icon {
+  font-size: 18px;
+}
+
+.right-icon {
+  color: silver;
+}

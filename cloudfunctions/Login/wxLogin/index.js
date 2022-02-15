@@ -35,7 +35,12 @@ exports.main = async (event, context) => {
   }
 
   // 获取注册时间
-  const registerTime = new Date().toLocaleDateString()
+  const date = new Date()
+  const year = date.getUTCFullYear()
+  const month = date.getUTCMonth() + 1
+  const day = date.getUTCDate()
+  const timeStr = `${year}年${month}月${day}日`
+  const registerTime = timeStr
   // 初始化钱包
   const money = 0
   // 初始化关注店铺

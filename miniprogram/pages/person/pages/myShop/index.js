@@ -1,11 +1,14 @@
-// pages/person/pages/myShop/index.js
+import httpUtil from '../../../../utils/httpUtil'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    loading: true,
+    merchantInfo: null,
+    canEnterShop: false,
   },
 
   /**
@@ -19,14 +22,31 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    httpUtil.getMerchantInfo()
+      .then(res => {
+        console.log(res);
+        const { merchantInfo } = res.data
+        const { status } = merchantInfo
+        if (status === 3) {
+          this.setData({
+            canEnterShop: true
+          })
+        } else {
+          this.setData({
+            canEnterShop: false
+          })
+        }
+        this.setData({
+          merchantInfo,
+          loading: false
+        })
+      })
   },
 
   /**

@@ -10,6 +10,8 @@ class HttpUtil {
   // 商家模块
   applyForMerchant = (params) => httpReq('Merchant', "applyForMerchant", params, true)
   getMerchantInfo = (params) => httpReq('Merchant', "getMerchantInfo", params, true)
+  changeMerchantInfo = (params) => httpReq('Merchant', "changeMerchantInfo", params, true)
+  deleteMerchant = (params) => httpReq('Merchant', "deleteMerchant", params, true)
   
 }
 

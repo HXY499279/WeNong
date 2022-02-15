@@ -1,0 +1,14 @@
+<view class="wraper">
+  <view style="margin-bottom: 40px;">
+    <van-skeleton title row="3" row-width="{{['70%','100%','60%']}}" />
+  </view>
+  <view style="margin-bottom: 40px;">
+    <van-skeleton title row="3" />
+  </view>
+  <view style="margin-bottom: 40px;">
+    <van-skeleton title row="4" row-width="{{['70%','100%','70%']}}" />
+  </view>
+  <view style="margin-bottom: 40px;">
+    <van-skeleton title row="3" />
+  </view>
+</view>

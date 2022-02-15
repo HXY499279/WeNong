@@ -1,0 +1,43 @@
+.wraper {
+  width: 92%;
+  height: 220rpx;
+  padding: 15rpx 30rpx;
+  margin: 20rpx auto;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-enter {
+  color: rgb(138, 138, 138);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  height: 120rpx;
+  margin-top: 18rpx;
+}
+
+.order-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 125rpx;
+  height: 120rpx;
+}
+
+.order-item-icon {
+  width: 86rpx;
+  height: 86rpx;
+}
+
+.order-item-title {
+  font-size: 14px;
+}

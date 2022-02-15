@@ -129,7 +129,7 @@ Page({
           wx.showToast({ title: '请上传店铺认证报告', icon: 'none' });
         } else {
           wx.showLoading({
-            title: '提交中...',
+            title: '提交中',
           })
           uploadImageToCloud(fileList, "店铺认证报告")
             .then(res => {
@@ -141,12 +141,14 @@ Page({
                     title: '申请成功',
                     content: '您的申请提交成功，预计2-3个工作日内审核完毕，请在我的店铺中查看审核结果',
                     success() {
-                      // 暂时往回跳，等我的店铺页面完善后更改至我的店铺
-                      wx.navigateBack()
+                      wx.redirectTo({
+                        url: '/pages/person/pages/myShop/index',
+                      })
                     },
                     fail() {
-                      // 暂时往回跳，等我的店铺页面完善后更改至我的店铺
-                      wx.navigateBack()
+                      wx.redirectTo({
+                        url: '/pages/person/pages/myShop/index',
+                      })
                     }
                   })
                 }, err => {
@@ -227,7 +229,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
