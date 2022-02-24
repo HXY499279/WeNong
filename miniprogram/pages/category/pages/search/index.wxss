@@ -1,0 +1,37 @@
+.wraper {
+  width: 92%;
+  padding: 20rpx 30rpx;
+}
+
+.search-history-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.search-history-head-title,
+.search-history-head-delete {
+  color: silver;
+}
+
+.search-history-head-delete{
+  font-size: 17px;
+}
+
+.search-history-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-history-item{
+  height: 70rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 7px;
+  padding: 10rpx 20rpx;
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+}

@@ -1,0 +1,54 @@
+<page-loading wx:if="{{loading}}"></page-loading>
+<view wx:else class="wraper">
+  <view class="content">
+    <view class="selectedAddress" bindtap="toChangeAddress">
+      <van-icon class="address-icon" name="location-o"></van-icon>
+      <view class="address-info" wx:if="{{defaultAddress}}">
+        <view class="address-info-person">
+          <text class="address-info-person-name">{{defaultAddress.contact}}</text>
+          <text class="address-info-person-phone">{{defaultAddress.contactPhone}}</text>
+        </view>
+        <view class="address-info-home"> {{defaultAddress.city[0]}} {{defaultAddress.city[1]}} {{defaultAddress.city[2]}} {{defaultAddress.address}}</view>
+      </view>
+      <view class="address-info-empty" wx:else>
+        请选择地址
+      </view>
+      <van-icon class="address-info-more" name="arrow"></van-icon>
+    </view>
+    <view class="item-wraper" wx:for="{{commoditiesData}}" wx:key="index" wx:for-item="merchant" wx:for-index="merchantIndex">
+      <view class="merchant-info">
+        <!-- <switch type="checkbox" bindchange="onSelectedMerchantChange" class="select"></switch> -->
+        <image class="merchant-info-head" src="{{merchant.merchantInfo.avatarUrl}}"></image>
+        <text class="merchant-info-name">{{merchant.merchantInfo.shopName}}</text>
+      </view>
+      <view class="item" wx:for="{{merchant.commodities}}" wx:key="index" wx:for-item="commodity" wx:for-index="commodityIndex">
+        <commodity-item item="{{commodity}}"></commodity-item>
+      </view>
+      <view class="other">
+        <text class="other-title">订单备注:</text>
+        <input class="other-ipt" bindinput="onRemarkInput" type="text" placeholder="选填，请先与商家协商一致" />
+      </view>
+    </view>
+    <view class="footer">
+      <view class="right">
+        <text class="right-total">共{{totalNumber}}件，合计:<text>￥<text class="right-total-num">{{totalPrice}}</text></text></text>
+        <van-button bindtap="toMakeOrder" round custom-style="width:115px;color:white;height:80rpx;margin-left:18rpx;" type="primary" color="rgb(99,188,81)">
+          提交订单
+        </van-button>
+      </view>
+      <van-action-sheet show="{{ isShowPay }}" bind: bind:close="onClosePay" title="支付">
+        <view class="pay-content">
+          <view class="pay-detail">
+            <text class="pay-money">￥<text class="pay-money-number">{{totalPrice}}</text></text>
+            <view class="pay-method">
+              <text>支付方式</text> <text>钱包</text>
+            </view>
+          </view>
+          <van-button bindtap="comfirmPay" custom-style="margin:0 auto;width:315px" type="primary" block color='linear-gradient(to right, #4bb0ff, #6149f6)'>
+            确认付款
+          </van-button>
+        </view>
+      </van-action-sheet>
+    </view>
+  </view>
+</view>

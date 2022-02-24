@@ -1,22 +1,32 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/category/category",
     "pages/cart/cart",
+    "pages/cart/pages/makeOrder/index",
     "pages/person/person",
     "pages/person/pages/loginSwitch/index",
     "pages/person/pages/myInfo/index",
-    "pages/hot/hot",
-    "pages/detail/detail",
     "pages/person/pages/myInfo/pages/changePhone/index",
     "pages/person/pages/myInfo/pages/applyForMerchant/index",
-    "pages/person/pages/myShop/index"
+    "pages/person/pages/myShop/index",
+    "pages/person/pages/myAdopt/index",
+    "pages/person/pages/myLikeShop/index",
+    "pages/person/pages/myLikeCommodity/index",
+    "pages/person/pages/myAddress/index",
+    "pages/person/pages/myAddress/pages/editMyAddress/index",
+    "pages/category/category",
+    "pages/category/pages/search/index",
+    "pages/category/pages/searchResult/index",
+    "pages/index/pages/toAdopt/index",
+    "pages/index/pages/nearbyFarm/index",
+    "pages/index/pages/agricultureInfo/index"
   ],
   "window": {
     "navigationStyle": "custom",
     "backgroundTextStyle": "light",
     "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#fff"
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColorBottom": "#FFF"
   },
   "tabBar": {
     "custom": true,
@@ -45,8 +55,5 @@
     }
   },
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
-  "usingComponents": {
-    "nav-bar": "./components/navBar/index"
-  }
+  "lazyCodeLoading": "requiredComponents"
 }

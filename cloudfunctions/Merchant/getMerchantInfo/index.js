@@ -13,7 +13,7 @@ exports.main = async (event, context) => {
   const getMockData = () => mockData[Math.floor(Math.random() * 3)]
   const getStatusResult = () => {
     const num = Math.random() * 10
-    if (num < 7) {
+    if (num > 8) {
       return 0
     } else {
       return 1

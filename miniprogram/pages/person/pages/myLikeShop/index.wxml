@@ -1,0 +1,29 @@
+<view class="bg"></view>
+<view class="wraper">
+  <view class="search">
+    <van-icon class="search-icon" name="search" />
+    <input bindinput="onSearch" class="search-ipt" placeholder="请输入店铺名" />
+  </view>
+  <view class="content">
+    <page-loading wx:if="{{loading}}" />
+    <view wx:else>
+      <view wx:if="{{dataNum}}">
+        <van-swipe-cell wx:for="{{searchList ? searchList : shops}}" wx:key="index" data-openid="{{item.openid}}" right-width="{{ 65 }}" async-close bind:close="deleteLikeShop">
+          <van-cell-group>
+            <van-cell class="item">
+              <image class="item-head" src="{{item.avatarUrl}}"></image>
+              <view class="item-title">
+                <text class="item-title-top">{{item.shopName}}</text>
+                <text class="item-title-bottom">{{item.city}}</text>
+              </view>
+            </van-cell>
+          </van-cell-group>
+          <view class="item-delete" slot="right">取关</view>
+        </van-swipe-cell>
+      </view>
+      <view wx:else>
+        <van-empty class="custom-image" description="无数据" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -4,7 +4,7 @@
     微信快捷登登录
   </van-button>
   <van-button wx:else open-type="getUserInfo" bind:getuserinfo="getUserInfo" round custom-style="margin-bottom:280rpx;" type="primary" block>
-    微信快捷登登录
+    微信快捷登录
   </van-button>
   <radio-group bindtap="agreeChange">
     <radio class="radio" name="1" checked="{{isAgree}}" /><text class="text">我已阅读，并同意《用户服务协议》《用户授权协议》《隐私政策》</text>

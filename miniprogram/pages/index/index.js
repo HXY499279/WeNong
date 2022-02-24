@@ -1,59 +1,75 @@
+import checkLogin from "../../utils/checkLogin"
+import httpUtil from "../../utils/httpUtil"
+
 Page({
   data: {
-    showIcon: true,
-    swiperList: [],
-    courses: [],
-    activities: [],
-    searchList: null,
-    type: "recommend",
-    tabs: [
-      { name: "推荐", type: "recommend" },
-      { name: "路径", type: "path" },
-      { name: "实战", type: "project" },
-      { name: "活动", type: "activity" }
-    ]
+    items: [],
+    commodityData: [],
+    info: "",
+    infos: [],
+    infoNum: 0
   },
-  onLoad() {
-    wx.request({
-      url: 'https://qc9prx.api.cloudendpoint.cn/getData',
-      success: ({ data }) => {
-        const { swiperList, courses, activities } = data.data
-        this.setData({
-          swiperList,
-          courses,
-          activities
-        })
-      }
-    })
-  },
-  onShow() {
-    this.getTabBar().setData({
-      active: 0
-    })
-  },
-  handleInputChange(e) {
-    const value = e.detail.value;
-    let searchList = null
-    if (value) {
-      searchList = this.data.courses.filter(item => {
-        if (item.title.search(new RegExp(value, "i")) !== -1) {
-          return item
-        }
-      })
-    }
-    this.setData({
-      showIcon: value ? false : true,
-      searchList
-    })
-  },
-  changeType(e) {
-    const type = e.currentTarget.dataset.type;
-    this.setData({ type });
-  },
-  handleCourseTap(e) {
-    const { id } = e.currentTarget.dataset
+
+  toAgricultureInfo(){
     wx.navigateTo({
-      url: `/pages/detail/detail?id=${id}`,
+      url: '/pages/index/pages/agricultureInfo/index',
     })
+  },
+
+  toNearbyFarm(){
+    wx.navigateTo({
+      url: '/pages/index/pages/nearbyFarm/index',
+    })
+  },
+
+  toAdopt() {
+    wx.navigateTo({
+      url: `/pages/index/pages/toAdopt/index`,
+    })
+  },
+
+  toSearch(e) {
+    wx.navigateTo({
+      url: `/pages/category/pages/search/index`,
+    })
+  },
+
+  toSearchResult(e) {
+    const { keyword, content } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/category/pages/searchResult/index?content=${content}&keyword=${keyword}&itemName=categoryId`,
+    })
+  },
+
+  onLoad() {
+    httpUtil.getCategoryInfo()
+      .then(res => {
+        const { categoryInfo } = res.data
+        this.setData({
+          items: categoryInfo
+        })
+      })
+    httpUtil.getCommodityInfo({ skip: 0, limit: 10 })
+      .then(res => {
+        const { commodityInfo: commodityData } = res.data
+        this.setData({
+          commodityData
+        })
+      })
+  },
+
+  onShow() {
+    let { infoNum } = this.data
+    httpUtil.getInfo()
+      .then(res => {
+        const { infos } = res.data
+        infoNum = ++infoNum % infos.length
+        const info = infos[infoNum].title
+        this.setData({
+          info,
+          infoNum
+        })
+      })
   }
+
 })

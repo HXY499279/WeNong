@@ -1,0 +1,13 @@
+<view class="item">
+  <image class="item-head" src="{{item.picture[0]}}"></image>
+  <view class="item-title" style="{{titleStyle}}">
+    <text class="item-title-top">{{item.name}} {{item.introduce}}</text>
+    <view class="item-title-left">
+      <text class="item-title-price">
+        <text class="item-title-price-hp">{{item.price}}元/{{item.unit}}</text>
+        <text class="item-title-span-hp">已售{{item.sales}}</text>
+      </text>
+      <text class="item-title-city">{{item.origin}}</text>
+    </view>
+  </view>
+</view>

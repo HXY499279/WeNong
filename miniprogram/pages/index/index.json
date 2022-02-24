@@ -1,4 +1,10 @@
 {
-  "backgroundColorTop": "#63BC51",
-  "usingComponents": {}
+  "backgroundColorTop": "#0EAB40",
+  "usingComponents": {
+    "commodity-item": "/components/commodity/commodityItem/index",
+    "home-bar": "/components/bars/homeBar/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
+  }
 }

@@ -1,0 +1,69 @@
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 210rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.item-head {
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 10px;
+}
+
+.item-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 100%;
+}
+
+.item-title-top {
+  font-size: 14px;
+  height: 44%;
+  line-height: 41.8rpx;
+  text-indent: 1em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  word-break: break-word !important;
+}
+
+.item-title-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45%;
+}
+
+.item-title-span-hp {
+  font-size: 14px;
+  color: silver;
+}
+
+.item-title-price {
+  display: flex;
+}
+
+.item-title-price-hp {
+  color: rgb(138, 0, 0);
+  margin-right: 15rpx;
+  font-size: 17px;
+}
+
+.item-title-city{
+  color: silver;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-word !important;
+}

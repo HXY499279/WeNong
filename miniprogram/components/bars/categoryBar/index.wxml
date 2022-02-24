@@ -1,0 +1,11 @@
+<view>
+  <view class="my-bar">
+    <view class="nav-bar" style="height:{{jiaoNangHeight}}px; padding-top:{{statusBarHeight}}px;">
+      <view class="search-wraper" style="height:{{jiaoNangHeight}} ;">
+        <van-icon name="search" />
+        <input bindtap="toSearch" class="search-ipt" disabled="{{true}}" placeholder="点击搜索" style="height: {{jiaoNangHeight}}px;" />
+      </view>
+    </view>
+  </view>
+  <view style="height:{{jiaoNangHeight}}px; padding-top:{{statusBarHeight}}px; padding-bottom:8px;background-color: #ffffff;"></view>
+</view>

@@ -1,0 +1,14 @@
+<view class="item">
+  <image class="item-head" src="{{item.picUrl[0]}}"></image>
+  <view class="item-title" style="{{titleStyle}}">
+    <text class="item-title-top">{{item.name}} {{item.growth}}</text>
+    <text class="item-title-middle">已生长{{item.age}}年 成活率{{item.aliveRate}}%</text>
+    <view class="item-title-bottom">
+      <text class="item-title-price">
+        <text class="item-title-price-hp">{{item.price}}元/株/{{item.payPeriod}}</text>
+        <text class="item-title-span-hp">结果量<text>{{item.amount}}</text></text>
+      </text>
+      <text class="item-title-city">{{item.location}}</text>
+    </view>
+  </view>
+</view>

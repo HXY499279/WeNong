@@ -8,5 +8,5 @@ page{
   height: 300rpx;
   border-bottom-left-radius: 17px;
   border-bottom-right-radius: 17px;
-  background-color: rgb(99, 188, 81);
+  background-color: rgb(14,171,64);
 }

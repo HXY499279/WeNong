@@ -1,0 +1,22 @@
+<search-bar bindnavBack="navBack" placeholder="果苗 果树" value="{{content}}" bindinput="onInput" bindconfirm="confirmSearch"></search-bar>
+<page-loading wx:if="{{pageLoading}}"></page-loading>
+<view wx:else class="wraper">
+  <van-tabs sticky offset-top="{{88}}" color="#63BC51" bind:click="onTitleClick">
+    <van-tab title="综合">
+      <fruitPlant-item titleStyle="width:70%;" wx:for="{{zh}}" wx:key="index" item="{{item}}"></fruitPlant-item>
+      <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有东西哦~" />
+    </van-tab>
+    <van-tab title="苗龄">
+      <fruitPlant-item titleStyle="width:70%;" wx:for="{{ml}}" wx:key="index" item="{{item}}"></fruitPlant-item>
+      <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有东西哦~" />
+    </van-tab>
+    <van-tab name="jg" title="价格">
+      <fruitPlant-item titleStyle="width:70%;" wx:for="{{jg}}" wx:key="index" item="{{item}}"></fruitPlant-item>
+      <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有东西哦~" />
+    </van-tab>
+    <van-tab title="成活率">
+      <fruitPlant-item titleStyle="width:70%;" wx:for="{{chl}}" wx:key="index" item="{{item}}"></fruitPlant-item>
+      <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有东西哦~" />
+    </van-tab>
+  </van-tabs>
+</view>

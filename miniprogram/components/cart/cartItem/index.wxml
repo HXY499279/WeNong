@@ -1,0 +1,10 @@
+<view class="item">
+  <image class="item-head" src="{{item.picture[0]}}"></image>
+  <view class="item-info">
+    <view class="item-info-title">{{item.name}} {{item.introduce}}</view>
+    <view class="item-info-other">
+      <text class="item-info-other-price">￥<text>{{item.price}}</text></text>
+      <van-stepper class="item-info-other-number" data-commodityid="{{item._id}}" value="{{ item.number }}" bind:change="onNumberChange" />
+    </view>
+  </view>
+</view>

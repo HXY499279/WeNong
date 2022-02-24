@@ -1,2 +1,16 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<category-bar bindtoSearch="toSearch"></category-bar>
+<page-loading wx:if="{{pageLoading}}"></page-loading>
+<view wx:else class="wraper">
+  <van-sidebar class="sider" active-key="{{ activeKey }}" bindtap="onCategoryChange">
+    <van-sidebar-item wx:for="{{categories}}" wx:key="index" data-categoryId="{{item._id}}" title="{{item.categoryName}}" />
+  </van-sidebar>
+  <page-loading class="content" wx:if="{{commodityLoading}}"></page-loading>
+  <view wx:else class="content">
+    <view class="commodities" wx:if="{{categoryToCommodities[showCategory]?categoryToCommodities[showCategory].length:0}}">
+      <commodity-item wx:for="{{categoryToCommodities[showCategory]}}" wx:key="index" item="{{item}}"></commodity-item>
+    </view>
+    <view wx:else>
+      <van-empty class="empty" description="没有商品哦~" />
+    </view>
+  </view>
+</view>

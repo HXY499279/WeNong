@@ -186,15 +186,15 @@ Page({
               }
             },
             {
-              itemName: "收获地址",
+              itemName: "收货地址",
               value: "",
               isPic: false,
               last: 'last',
               clickFunction: {
                 fun: () => {
-                  // 跳转收获地址页面
+                  // 跳转收货地址页面
                   wx.navigateTo({
-                    url: '/pages/person/pages/myInfo/index',
+                    url: '/pages/person/pages/myAddress/index',
                   })
                 }
               }

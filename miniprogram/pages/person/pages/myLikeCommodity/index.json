@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "我的收藏",
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "usingComponents": {
+    "page-loading": "/components/pageLoading/index",
+    "like-commodity-item": "/components/commodity/likeCommodityItem/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

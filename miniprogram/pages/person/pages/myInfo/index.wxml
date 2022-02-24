@@ -13,7 +13,7 @@
   <van-button wx:if="{{merchantInfo.status}}" class="apply-btn" bindtap="toMyShop" round custom-style="margin:160rpx auto 50rpx;width:315px" type="primary" block color='linear-gradient(to right, #4bb0ff, #6149f6)'>
     {{merchantInfo.status === 3 ? "进入店铺" : "查看申请结果"}}
   </van-button>
-  <van-button wx:else class="apply-btn" bindtap="toApplyForMerchant" round custom-style="margin:160rpx auto 50rpx;width:315px" type="primary" block color='linear-gradient(to right, #4bb0ff, #6149f6)'>
+  <van-button wx:else class="apply-btn" bindtap="toApplyForMerchant" round custom-style="margin:160rpx auto 50rpx;width:315px" type="primary" block color='rgb(99,188,81)'>
     申请成为商家
   </van-button>
   <van-button bindtap="logout" round custom-style="margin:0 auto 50rpx;width:315px" type="primary" block color="linear-gradient(to right, rgb(255, 96, 52), rgb(238, 10, 36))">

@@ -1,3 +1,5 @@
+import checkLogin from "../../../utils/checkLogin"
+
 // components/my/myItemFrame/index.js
 Component({
   /**
@@ -29,22 +31,22 @@ Component({
       {
         icon: "flower-o",
         title: "我的领养",
-        onTap: ""
+        onTap: "toMyAdopt"
       },
       {
         icon: "star-o",
         title: "我的收藏",
-        onTap: ""
+        onTap: "toMyLikeCommodity"
       },
       {
         icon: "location-o",
         title: "我的收货地址",
-        onTap: ""
+        onTap: "toMyAddress"
       },
       {
         icon: "shop-collect-o",
         title: "我关注的店铺",
-        onTap: ""
+        onTap: "toMyLikeShop"
       }
     ]
   },
@@ -53,29 +55,57 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    judgeLogin() {
-      const OPENID = wx.getStorageSync('hasLoginOPENID')
-      if (!OPENID) {
-        wx.navigateTo({
-          url: '/pages/person/pages/loginSwitch/index',
-        })
-      }
-    },
-    judgeMerchant() {
-      const { userInfo } = this.data
-      if (!userInfo.merchantId) {
-        wx.navigateTo({
-          url: '/pages/person/pages/myInfo/pages/applyForMerchant/index',
-        })
-      }
-    },
     // 我的店铺
     toMyShop() {
-      this.judgeLogin()
-      this.judgeMerchant()
-      wx.navigateTo({
-        url: '/pages/person/pages/myShop/index',
-      })
+      const { userInfo } = this.data
+      checkLogin()
+        .then(() => {
+          if (!userInfo.merchantId) {
+            wx.navigateTo({
+              url: '/pages/person/pages/myInfo/pages/applyForMerchant/index',
+            })
+          } else {
+            wx.navigateTo({
+              url: '/pages/person/pages/myShop/index',
+            })
+          }
+        })
+    },
+    // 我的领养
+    toMyAdopt() {
+      checkLogin()
+        .then(() => {
+          wx.navigateTo({
+            url: '/pages/person/pages/myAdopt/index',
+          })
+        })
+    },
+    // 我的收藏
+    toMyLikeCommodity() {
+      checkLogin()
+        .then(() => {
+          wx.navigateTo({
+            url: '/pages/person/pages/myLikeCommodity/index',
+          })
+        })
+    },
+    // 我的收货地址
+    toMyAddress() {
+      checkLogin()
+        .then(() => {
+          wx.navigateTo({
+            url: '/pages/person/pages/myAddress/index',
+          })
+        })
+    },
+    // 我关注的店铺
+    toMyLikeShop() {
+      checkLogin()
+        .then(() => {
+          wx.navigateTo({
+            url: '/pages/person/pages/myLikeShop/index',
+          })
+        })
     }
   }
 })

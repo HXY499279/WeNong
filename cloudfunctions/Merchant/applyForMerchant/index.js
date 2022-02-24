@@ -10,6 +10,16 @@ exports.main = async (event, context) => {
 
   const { OPENID, merchantInfo } = event
 
+  // 获取用户的头像
+  const { result = {} } = await cloud.callFunction({
+    name: "User",
+    data: {
+      type: "getUserInfo",
+      OPENID
+    }
+  })
+  const avatarUrl = result.data.userInfo.avatarUrl
+
   // 详细介绍
   const detailIntro = ""
   // 店铺评分
@@ -48,7 +58,8 @@ exports.main = async (event, context) => {
         images,
         status,
         checkedResult,
-        applyTime
+        applyTime,
+        avatarUrl
       }
     })
     const { result } = await cloud.callFunction({

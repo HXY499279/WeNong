@@ -1,0 +1,15 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "确认订单",
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {
+    "commodity-item":"/components/cart/commodityItem/index",
+    "page-loading": "/components/pageLoading/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

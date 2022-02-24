@@ -13,15 +13,113 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
+          "name": "我的",
           "pathName": "pages/person/person",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/person/pages/myShop/index",
+          "name": "我的收藏",
+          "pathName": "pages/person/pages/myLikeCommodity/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我关注的店铺",
+          "pathName": "pages/person/pages/myLikeShop/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的收货地址",
+          "pathName": "pages/person/pages/myAddress/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "添加收货地址",
+          "pathName": "pages/person/pages/myAddress/pages/editMyAddress/index",
+          "query": "isEdit=false",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "编辑收货地址",
+          "pathName": "pages/person/pages/myAddress/pages/editMyAddress/index",
+          "query": "isEdit=true&_id=1ef3c513620decb807e3aa560d518b4d",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "确认订单",
+          "pathName": "pages/cart/pages/makeOrder/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分类",
+          "pathName": "pages/category/category",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分类搜索页面",
+          "pathName": "pages/category/pages/search/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "分类结果页面",
+          "pathName": "pages/category/pages/searchResult/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的领养",
+          "pathName": "pages/person/pages/myAdopt/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "去领养",
+          "pathName": "pages/index/pages/toAdopt/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品上架",
+          "pathName": "pages/index/pages/agricultureInfo/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "果苗上架",
+          "pathName": "pages/index/pages/nearbyFarm/index",
           "query": "",
           "scene": null,
           "launchMode": "default"

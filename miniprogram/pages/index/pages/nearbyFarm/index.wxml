@@ -1,0 +1,93 @@
+<view class="wraper">
+  <view class="backgroud-circle"></view>
+  <view class="module">
+    <van-steps steps="{{ steps }}" active="{{ 3 }}" />
+  </view>
+  <view class="content">
+    <text class="content-title">选择果苗基本信息</text>
+    <view class="item">
+      <view class="item-name"><text>果苗品种</text></view>
+      <view class="item-ipt-wraper">
+        <input disabled class="item-ipt" placeholder="选择果苗品种"></input>
+        <van-icon class="item-ipt-icon" name="arrow" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>果苗名</text></view>
+      <view class="item-ipt-wraper">
+        <input disabled class="item-ipt" placeholder="选择果苗名称"></input>
+        <van-icon class="item-ipt-icon" name="arrow" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>预计果苗苗龄</text></view>
+      <view class="item-ipt-wraper">
+        <input disabled class="item-ipt" placeholder="选择果苗苗龄"></input>
+        <van-icon class="item-ipt-icon" name="arrow" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>果苗生长地区</text></view>
+      <view class="item-ipt-wraper">
+        <input disabled class="item-ipt" placeholder="选择果苗生长地区"></input>
+        <van-icon class="item-ipt-icon" name="arrow" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>果苗领养价格</text></view>
+      <view class="item-ipt-wraper">
+        <input disabled class="item-ipt" placeholder="选择果苗领养价格"></input>
+        <van-icon class="item-ipt-icon" name="arrow" />
+      </view>
+    </view>
+  </view>
+  <view class="separate"></view>
+  <view class="content">
+    <text class="content-title">填写果苗生长信息</text>
+    <view class="item-other">
+      <text class="item-other-title">生长情况</text>
+      <view class="item-other-ipt-wraper">
+        <textarea class="item-other-ipt" auto-height placeholder="自述果苗当前生长情况"></textarea>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>预计成熟时间</text></view>
+      <view class="item-ipt-wraper">
+        <input class="item-ipt" placeholder="填写预计成熟时间"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>最佳采摘时间</text></view>
+      <view class="item-ipt-wraper">
+        <input class="item-ipt" placeholder="填写最佳采摘时间"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>结果量</text></view>
+      <view class="item-ipt-wraper">
+        <input class="item-ipt" placeholder="填写结果量"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>自然座果率</text></view>
+      <view class="item-ipt-wraper">
+        <input class="item-ipt" placeholder="填写自然座果率"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-name"><text>成活率</text></view>
+      <view class="item-ipt-wraper">
+        <input class="item-ipt" placeholder="填写成活率"></input>
+      </view>
+    </view>
+    <view class="item-uploader">
+      <view class="item-name"><text>果苗图片</text></view>
+      <view class="item-ipt-wraper">
+        <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <button class="footer-btn">确认上架</button>
+  </view>
+</view>

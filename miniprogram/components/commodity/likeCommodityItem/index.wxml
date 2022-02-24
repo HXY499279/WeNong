@@ -1,0 +1,15 @@
+<view class="item">
+  <image class="item-head" src="{{item.picture[0]}}"></image>
+  <view class="item-title">
+    <text class="item-title-top">{{item.name}} {{item.introduce}}</text>
+    <text class="item-title-span">
+      <text class="item-title-span-hp">好评率{{item.positiveRatings}}</text>
+      <text class="item-title-span-hp">总销量{{item.sales}}</text>
+    </text>
+    <text class="item-title-price">
+      <text class="item-title-price-hp">{{item.price}}元/{{item.unit}}</text>
+      <text class="item-title-price-hp">{{item.heavy}}</text>
+    </text>
+    <text class="item-title-bottom">{{item.merchantInfo.shopName}} {{item.origin}}</text>
+  </view>
+</view>

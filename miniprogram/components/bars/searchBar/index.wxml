@@ -1,0 +1,12 @@
+<view>
+  <view class="my-bar">
+    <view class="nav-bar" style="height:{{jiaoNangHeight}}px; padding-top:{{statusBarHeight}}px;">
+      <van-icon bindtap="navBack" class="nav-back" name="arrow-left" />
+      <view class="search-wraper" style="height:{{jiaoNangHeight}} ;">
+        <van-icon name="search" />
+        <input class="search-ipt" bindinput="onInput" bindconfirm="confirm" auto-focus="{{autoFocus}}" value="{{value}}" placeholder="{{placeholder}}" style="height: {{jiaoNangHeight}}px;" />
+      </view>
+    </view>
+  </view>
+  <view style="height:{{jiaoNangHeight}}px; padding-top:{{statusBarHeight}}px; padding-bottom:8px;background-color: #ffffff;"></view>
+</view>

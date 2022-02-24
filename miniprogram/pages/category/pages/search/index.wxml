@@ -1,0 +1,10 @@
+<search-bar bindnavBack="navBack" placeholder="搜索商品" value="{{searchValue}}" autoFocus="{{true}}" bindconfirm="confirmSearch"></search-bar>
+<view class="wraper">
+  <view class="search-history-head">
+    <text class="search-history-head-title">历史搜索</text>
+    <van-icon bindtap="deleteSearchHistory" class="search-history-head-delete" name="delete-o" />
+  </view>
+  <view class="search-history-list">
+    <text wx:for="{{searchList}}" wx:key="index" data-keyword="{{item.keyword}}" bindtap="toSearchResult" class="search-history-item">{{item.keyword}}</text>
+  </view>
+</view>

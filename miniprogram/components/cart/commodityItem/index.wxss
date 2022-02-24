@@ -1,0 +1,72 @@
+.item-wraper {
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+
+.item-head {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 14%;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  padding: 6rpx 0;
+  box-sizing: border-box;
+}
+
+.item-info-title {
+  font-size: 14px;
+  height: 78rpx;
+  line-height: 39rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  word-break: break-word !important;
+}
+
+.item-info-other {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-info-other-price{
+  color: rgb(185, 0, 0);
+}
+
+.number {
+  font-size: 13px !important;
+  color: rgb(85, 85, 85);
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15rpx;
+  font-size: 13px;
+}
+
+.other-title {
+  width: 170rpx;
+  text-align: end;
+}
+
+.other-content {
+  width: 70%;
+  height: auto;
+  color: rgb(143, 143, 143);
+}

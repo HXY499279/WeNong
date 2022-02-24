@@ -1,0 +1,25 @@
+<page-loading wx:if="{{loading}}"></page-loading>
+<view wx:else class="wraper">
+  <view wx:if="{{addresses.length}}" class="content">
+    <van-swipe-cell class="swipeCell" wx:for="{{addresses}}" wx:key="index" right-width="{{item.isDefault? 60:110 }}" async-close>
+      <van-cell-group>
+        <view class="item-wraper">
+          <my-address data-addressId="{{item._id}}" bindtap="{{select?'selectAddress':''}}" class="address-item" item="{{item}}" />
+          <van-icon class="item-edit" data-_id="{{item._id}}" bindtap="toEditMyAddress" name="edit"></van-icon>
+        </view>
+      </van-cell-group>
+      <view class="item-more" slot="right">
+        <view wx:if="{{!item.isDefault}}" data-selectedIndex="{{index}}" data-_id="{{item._id}}" bindtap="swmrAddress" class="item-more-right swmr"><text>设为默认</text></view>
+        <view data-selectedIndex="{{index}}" data-_id="{{item._id}}" bindtap="deleteAddress" class="item-more-right delete"><text>删除</text></view>
+      </view>
+    </van-swipe-cell>
+  </view>
+  <view wx:else>
+    <van-empty class="custom-image" description="还没添加收货地址哦~" />
+  </view>
+</view>
+<view class="footer">
+  <van-button bindtap="toAddMyAddress" round custom-style="margin:0 auto 50rpx;width:315px" type="primary" block color="rgb(99,188,81)">
+    添加收货地址
+  </van-button>
+</view>

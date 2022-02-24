@@ -1,0 +1,23 @@
+<view class="bg"></view>
+<view class="wraper">
+  <view class="search">
+    <van-icon class="search-icon" name="search" />
+    <input bindinput="onSearch" class="search-ipt" placeholder="请输入商品名" />
+  </view>
+  <view class="content">
+    <page-loading wx:if="{{loading}}" />
+    <view wx:else>
+      <view wx:if="{{dataNum}}">
+        <van-swipe-cell wx:for="{{searchList ? searchList : commodities}}" wx:key="index" data-_id="{{item._id}}" right-width="{{ 65 }}" async-close bind:close="deleteLikeShop">
+          <van-cell-group>
+            <like-commodity-item item="{{item}}"></like-commodity-item>
+          </van-cell-group>
+          <view class="item-delete" slot="right"><text>取关</text></view>
+        </van-swipe-cell>
+      </view>
+      <view wx:else>
+        <van-empty class="custom-image" description="无数据" />
+      </view>
+    </view>
+  </view>
+</view>

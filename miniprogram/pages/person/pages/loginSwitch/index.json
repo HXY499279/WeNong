@@ -1,6 +1,6 @@
 {
   "navigationStyle":"default",
-  "navigationBarTitleText":"你侬我侬登录",
+  "navigationBarTitleText":"we农登录",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-toast": "@vant/weapp/toast/index",

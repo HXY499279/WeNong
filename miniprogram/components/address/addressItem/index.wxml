@@ -1,0 +1,10 @@
+<view class="item">
+  <view class="item-top">
+    <text class="item-top-name">{{item.contact}}</text>
+    <text class="item-top-phone">{{item.contactPhone}}</text>
+    <van-tag wx:if="{{item.isDefault}}" plain class="item-top-tag" type="success">默认</van-tag>
+  </view>
+  <view class="item-bottom">
+    {{item.city[0]}} {{item.city[1]}} {{item.city[2]}} {{item.address}}
+  </view>
+</view>

@@ -1,0 +1,31 @@
+.my-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5001;
+}
+
+.nav-bar {
+  width: 100%;
+  background-color: rgb(14,171,64);
+  padding-bottom: 8px;
+}
+
+.nav-bar .logo,
+.nav-bar .title {
+  vertical-align: middle;
+}
+
+.logo {
+  margin-left: 10px;
+}
+
+.title {
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: -5px;
+  font-size: 20px;
+  font-family: "STLiti";
+  color: white;
+}

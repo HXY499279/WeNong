@@ -1,0 +1,27 @@
+.my-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5001;
+}
+
+.nav-bar {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 8px;
+}
+
+.search-wraper{
+  display: flex;
+  align-items: center;
+  width: 490rpx;
+  border-radius: 20px;
+  padding-left: 20rpx;
+  margin-left: 26rpx;
+  background-color: #F5F5F5;
+}
+
+.search-ipt{
+  margin-left: 10rpx;
+}

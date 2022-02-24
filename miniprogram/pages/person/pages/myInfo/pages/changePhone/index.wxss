@@ -1,5 +1,5 @@
 .wraper {
-  width: 80%;
+  width: 85%;
   margin: 150rpx auto 0;
 }
 

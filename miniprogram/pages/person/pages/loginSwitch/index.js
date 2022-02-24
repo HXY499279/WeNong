@@ -23,7 +23,7 @@ Page({
   },
   // 获取用户信息
   getUserInfo(e) {
-    const { nickName, avatarUrl } = e.detail.userInfo;
+    const { nickName = "", avatarUrl = "" } = e.detail.userInfo;
     this.wxLogin({ nickName, avatarUrl })
   },
   // 微信登录

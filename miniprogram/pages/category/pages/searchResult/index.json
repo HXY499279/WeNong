@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "page-loading": "/components/pageLoading/index",
+    "commodity-item": "/components/commodity/commodityItem/index",
+    "search-bar":"/components/bars/searchBar/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

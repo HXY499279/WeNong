@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "编辑收货地址",
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {
+    
+  }
+}

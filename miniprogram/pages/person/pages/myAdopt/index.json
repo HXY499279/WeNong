@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "我的领养",
+  "navigationBarBackgroundColor":"#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "usingComponents": {
+    "page-loading": "/components/pageLoading/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

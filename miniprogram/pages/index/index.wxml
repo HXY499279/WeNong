@@ -1,15 +1,38 @@
-<nav-bar></nav-bar>
-<view class="header">
-  <input type="text" class="header-input" placeholder="AngularJS·MySQL·Java"
-    placeholder-class="header-input-placeholder" bindinput="handleInputChange" />
-  <icon type="search" class="header-input-icon" size="13" wx:if="{{showIcon}}" />
-</view>
-<view class="navigator">
-  <view class="navigator-item" wx:for="{{tabs}}" wx:key="type" data-type="{{item.type}}" bindtap="changeType">
-    <image class="navigator-img" src="../../resources/{{item.type}}.png" />
-    {{item.name}}
-    <view hidden="{{type !== item.type}}" class="navigator-acitve navigator-active-{{item.type}}" />
+<home-bar bindtoSearch="toSearch"></home-bar>
+<view class="backgroud-circle"></view>
+<view class="wraper">
+  <van-notice-bar color="#FFF" background="#0EAB40" scrollable text="{{info}}" />
+  <view class="module-wraper">
+    <view class="module" bindtap="toAgricultureInfo"><text class="module-title">农业资讯</text><text class="module-content">不懂农业？上农业资讯</text>
+      <image class="module-img" src="../../resources/农事农情.png"></image>
+    </view>
+    <view class="module" bindtap="toNearbyFarm"><text class="module-title">周围农庄</text><text class="module-content">探索你周围的农庄好店！</text>
+      <image class="module-img" src="../../resources/农林牧渔.png"></image>
+    </view>
+  </view>
+  <view class="navigator-wraper box">
+    <van-skeleton wx:if="{{!items.length}}" title row="5" />
+    <view wx:else class="navigator">
+      <view wx:for="{{items}}" wx:key="index" class="navigator-item" data-content="{{item.categoryName}}" data-keyword="{{item._id}}" bindtap="toSearchResult">
+        <image class="navigator-item-img" src="{{item.picUrl}}" />
+        <text class="navigator-item-name">{{item.categoryName}}</text>
+      </view>
+      <view class="navigator-item" bindtap="toAdopt">
+        <image class="navigator-item-img" src="cloud://txy-cloud-6ghoeszad64e80b2.7478-txy-cloud-6ghoeszad64e80b2-1309088521/首页navigator/树苗.png" />
+        <text class="navigator-item-name">去领养</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="wntj-wraper">
+    <view class="wntj">
+      <image class="wntj-img" src="../../resources/wntj.png" />
+      <text class="wntj-title">为你推荐</text>
+    </view>
+  </view> -->
+  <view class="content-wraper box">
+    <van-skeleton wx:if="{{!commodityData.length}}" title row="12" />
+    <view wx:else class="content">
+      <commodity-item titleStyle="width:69%;" wx:for="{{commodityData}}" wx:key="index" item="{{item}}"></commodity-item>
+    </view>
   </view>
 </view>
-<include src="./recommend.wxml"></include>
-<include src="./activity.wxml"></include>

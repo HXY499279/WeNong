@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "果苗上架",
+  "navigationBarBackgroundColor": "#0EAB40",
+  "backgroundColorTop": "#0EAB40",
+  "usingComponents": {
+    "van-steps": "@vant/weapp/steps/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
+}

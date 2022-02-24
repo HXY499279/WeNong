@@ -1,7 +1,9 @@
 {
-  "backgroundTextStyle":"light",
-  "backgroundColorTop": "#63BC51",
+  "backgroundTextStyle": "light",
+  "backgroundColorTop": "#0EAB40",
+  "backgroundColorBottom": "#F5F5F5",
   "usingComponents": {
+    "my-bar": "/components/bars/myBar/index",
     "van-button": "@vant/weapp/button/index",
     "login-status-frame": "/components/my/loginStatusFrame/index",
     "my-item-frame": "/components/my/myItemFrame/index",

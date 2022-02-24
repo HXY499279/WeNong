@@ -1,1 +1,17 @@
-/* pages/category/category.wxss */
+.wraper{
+  display: flex;
+  height: 79vh;
+}
+
+.sider{
+  width: 20%;
+}
+
+.content{
+  width: 80%;
+  overflow-y: auto;
+}
+
+.van-empty{
+  padding-top: 266rpx !important;
+}

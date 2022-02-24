@@ -1,0 +1,40 @@
+.wraper{
+  padding: 30rpx 40rpx;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  margin-bottom: 50rpx;
+}
+
+.item-name {
+  height: 50rpx;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.item-ipt-wraper{
+  display: flex;
+  align-items: center;  
+  width: 73%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.item-ipt {
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+}
+
+.submit-btn{
+  margin-top: 87rpx;
+  color: white;
+  letter-spacing: 3px;
+  border-radius: 10px;
+  background-color: rgb(99,188,81);
+}

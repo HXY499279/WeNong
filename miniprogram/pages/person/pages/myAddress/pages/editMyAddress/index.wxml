@@ -1,0 +1,35 @@
+<view class="wraper">
+  <form bindsubmit="bindFormSubmit">
+    <view class="item">
+      <text class="item-name">收货人</text>
+      <view class="item-ipt-wraper">
+        <input name="contact" type="text" class="item-ipt" value="{{editAddress.contact}}" placeholder="名字" />
+      </view>
+    </view>
+    <view class="item">
+      <text class="item-name">手机号码</text>
+      <view class="item-ipt-wraper">
+        <input name="contactPhone" type="number" class="item-ipt" value="{{editAddress.contactPhone}}" placeholder="手机号" />
+      </view>
+    </view>
+    <picker name="city" mode="region" bindchange="bindRegionChange" value="{{city}}" custom-item="{{customItem}}">
+      <view class="item">
+        <text class="item-name">所在地区</text>
+        <view class="item-ipt-wraper">
+          <view class="item-ipt">{{city[0]}}，{{city[1]}}，{{city[2]}}</view>
+        </view>
+      </view>
+    </picker>
+    <view class="item">
+      <text class="item-name">详细地址</text>
+      <view class="item-ipt-wraper">
+        <input name="address" type="text" class="item-ipt" value="{{editAddress.address}}" placeholder="详细地址" />
+      </view>
+    </view>
+    <view class="item">
+      <text class="item-name">设为默认收货地址</text>
+      <switch name="isDefault" checked="{{editAddress.isDefault === 1?true:false}}" />
+    </view>
+    <button class="submit-btn" form-type="submit">{{isEdit?"保存":"添加"}}</button>
+  </form>
+</view>

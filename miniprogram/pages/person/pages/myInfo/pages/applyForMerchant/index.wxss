@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100rpx;
-  margin: 0 123rpx;
+  margin: 0 15%;
   font-size: 22px;
   letter-spacing: 5px;
 }
@@ -68,5 +68,5 @@
 
 .submit-btn{
   margin: 150rpx 0;
-  background-color: rgb(3, 154, 241);
+  background-color: rgb(99,188,81);
 }

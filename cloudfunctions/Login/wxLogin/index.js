@@ -44,7 +44,7 @@ exports.main = async (event, context) => {
   // 初始化钱包
   const money = 0
   // 初始化关注店铺
-  const likeStore = []
+  const likeShop = []
   // 初始化收藏
   const likeCommodity = []
   // 初始化商家身份
@@ -64,7 +64,7 @@ exports.main = async (event, context) => {
       city,
       likeCommodity,
       money,
-      likeStore,
+      likeShop,
     }
   })
     .then(res => {

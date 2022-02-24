@@ -1,2 +1,40 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<cart-bar total="{{total}}"></cart-bar>
+<page-loading wx:if="{{loading}}"></page-loading>
+<view wx:else class="wraper">
+  <view wx:if="{{carts.length}}" class="content">
+    <view class="item-wraper" wx:for="{{carts}}" wx:key="index" wx:for-item="merchant" wx:for-index="merchantIndex">
+      <view class="merchant-info">
+        <!-- <switch type="checkbox" bindchange="onSelectedMerchantChange" class="select"></switch> -->
+        <image class="merchant-info-head" src="{{merchant.merchantInfo.avatarUrl}}"></image>
+        <text class="merchant-info-name">{{merchant.merchantInfo.shopName}}</text>
+        <van-icon class="merchant-info-more" name="arrow" />
+      </view>
+      <van-swipe-cell class="swipeCell" wx:for="{{merchant.commodities}}" wx:key="index" wx:for-item="commodity" wx:for-index="commodityIndex" right-width="{{ 80 }}" async-close>
+        <van-cell-group>
+          <view class="item">
+            <switch type="checkbox" checked="{{selectedAll}}" data-commodityId="{{commodity._id}}" data-merchantIndex="{{merchantIndex}}" data-commodityIndex="{{commodityIndex}}" bindchange="onSelectedCommodityChange" class="select"></switch>
+            <my-cart bindnumberChange="onNumberChange" merchantIndex="{{merchantIndex}}" commodityIndex="{{commodityIndex}}" class="item-cart" item="{{commodity}}" />
+          </view>
+        </van-cell-group>
+        <view class="item-more" slot="right">
+          <view data-merchantIndex="{{merchantIndex}}" data-commodityIndex="{{commodityIndex}}" data-commodityId="{{commodity._id}}" bindtap="deleteCart" class="item-more-right delete"><text>删除</text></view>
+        </view>
+      </van-swipe-cell>
+    </view>
+    <view class="footer">
+      <view class="left">
+        <switch type="checkbox" checked="{{allBtn}}" bindchange="onSelectedAllChange"></switch>
+        <text class="left-qx">全选</text>
+      </view>
+      <view class="right">
+        <text class="right-total">合计:<text>￥<text class="right-total-num">{{totalPrice}}</text></text></text>
+        <van-button bindtap="toMakeOrder" round custom-style="width:115px;color:white;height:80rpx;margin-left:18rpx;" type="primary" color="rgb(99,188,81)">
+          结算
+        </van-button>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <van-empty class="custom-image" description="还没添加商品哦~" />
+  </view>
+</view>

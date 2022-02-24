@@ -1,0 +1,17 @@
+<view>
+  <view class="my-bar">
+    <view class="nav-bar" style="height:{{jiaoNangHeight}}px; padding-top:{{statusBarHeight}}px;">
+      <image class="logo" src="../../../resources/logo-t.png" style="height:{{jiaoNangHeight}}px;width:{{jiaoNangHeight}}px;line-height: {{jiaoNangHeight}}px;" />
+      <text class="title" style="line-height: {{jiaoNangHeight}}px;">we农</text>
+    </view>
+    <view class="header-wraper">
+      <view class="header">
+        <view class="content-wraper" bindtap="toSearch">
+          <van-icon class="header-input-icon" name="search" />
+          <input type="text" class="header-input" disabled placeholder="买农货 来we农" placeholder-class="header-input-placeholder" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="height:{{jiaoNangHeight+42}}px; padding-top:{{statusBarHeight}}px; padding-bottom:8px;background-color: rgb(14,171,64);"></view>
+</view>

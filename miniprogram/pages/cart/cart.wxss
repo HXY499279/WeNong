@@ -1,1 +1,108 @@
-/* pages/cart/cart.wxss */
+.wraper {
+  width: 100%;
+  min-height: 89vh;
+  padding-bottom: 305rpx;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+}
+
+.item-wraper {
+  width: 95%;
+  padding: 20rpx 30rpx;
+  margin: 0 auto 30rpx;
+  background-color: white;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+.merchant-info {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+}
+
+.merchant-info-head {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 20%;
+}
+
+.merchant-info-name {
+  margin: 0 7rpx 0 22rpx;
+}
+
+.merchant-info-more {
+  font-size: 16px;
+  color: rgb(190, 190, 190);
+}
+
+.item-more {
+  display: flex;
+  width: 122rpx;
+  height: 100%;
+  padding-left: 20rpx;
+  overflow: hidden;
+}
+
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  background-color: rgb(238, 10, 36);
+}
+
+.delete>text {
+  height: 45rpx;
+  color: white;
+}
+
+.van-empty {
+  height: 60vh;
+  padding-top: 202rpx !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box;
+}
+
+.footer {
+  position: fixed;
+  width: 94%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 25rpx 189rpx;
+  bottom: 0;
+  background-color: white;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left-qx {
+  color: silver;
+  font-size: 14px;
+}
+
+.right-total text {
+  color: rgb(185, 0, 0);
+}
+
+.right-total-num {
+  font-size: 20px;
+}
