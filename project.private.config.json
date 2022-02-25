@@ -121,6 +121,13 @@
           "name": "果苗上架",
           "pathName": "pages/index/pages/nearbyFarm/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的订单",
+          "pathName": "pages/person/pages/myOrder/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

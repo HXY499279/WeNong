@@ -17,4 +17,8 @@
     <text class="other-title">物流说明:</text>
     <text class="other-content">{{item.logisticsInstructions}}</text>
   </view>
+  <view class="other">
+    <text class="other-title">订单备注:</text>
+    <input class="other-ipt" data-commodityId="{{item._id}}" bindinput="onRemarkInput" type="text" placeholder="选填，请先与商家协商一致" />
+  </view>
 </view>

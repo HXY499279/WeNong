@@ -1,5 +1,5 @@
 <my-bar></my-bar>
 <view class="backgroud-circle"></view>
 <login-status-frame isLogin="{{isLogin}}" userInfo="{{userInfo}}"></login-status-frame>
-<my-order></my-order>
+<my-order-frame></my-order-frame>
 <my-item-frame userInfo="{{userInfo}}"></my-item-frame>

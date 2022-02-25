@@ -1,4 +1,12 @@
 import httpUtil from "../../../../utils/httpUtil";
+import {
+  WILLPAY,
+  WILLDELIVERY,
+  WILLRECEIVE,
+  FINISHED,
+  REFUNDED,
+  ALLORDERS
+} from '../../../../utils/constant'
 
 // pages/cart/pages/makeOrder/index.js
 Page({
@@ -12,9 +20,9 @@ Page({
     commoditiesData: {},
     totalNumber: 0,
     totalPrice: 0,
-    remark: "",
-    remarkTimer: null,
-    isShowPay: false
+    remarkTimer: {},
+    isShowPay: false,
+    remarks: {}
   },
 
   toChangeAddress() {
@@ -23,56 +31,102 @@ Page({
     })
   },
 
-  onRemarkInput(e) {
+  bindRemarkInput(e) {
+    const that = this
     const { remarkTimer } = this.data
-    const { value } = e.detail
-    remarkTimer && clearTimeout(remarkTimer)
+    const { value, commodityId } = e.detail
+    remarkTimer[commodityId] && clearTimeout(remarkTimer[commodityId])
+    remarkTimer[commodityId] = setTimeout(() => {
+      const { remarks } = that.data
+      remarks[commodityId] = value
+      this.setData({
+        remarks
+      })
+    }, 1000)
     this.setData({
-      remarkTimer: setTimeout(() => {
-        console.log(value);
-        this.setData({ remark: value })
-      }, 1000)
+      remarkTimer
     })
+  },
+
+  makeOrder(status) {
+    // 获取下单时间
+    const date = new Date()
+    const year = date.getUTCFullYear()
+    const month = date.getUTCMonth()
+    const day = date.getUTCDate()
+    const hour = date.getHours()
+    const min = date.getUTCMinutes()
+    const second = date.getUTCSeconds()
+    const addTime = `${year}-${month}-${day} ${hour}:${min}:${second}`
+    // 获取地址id 获取备注
+    const { defaultAddress: { _id: addressId }, remarks, commoditiesData } = this.data
+
+    // 生成订单
+    const newOrders = []
+    commoditiesData.forEach(item => {
+      item.commodities.forEach(commodity => {
+        const order = {
+          addressId,
+          commodityId: commodity._id,
+          number: commodity.number,
+          heavy: commodity.heavy,
+          price: commodity.price,
+          totalPrice: (commodity.number * commodity.price).toFixed(2),
+          addTime,
+          remark: remarks[commodity._id] || "",
+          status
+        }
+        newOrders.push(order)
+      })
+    })
+    return httpUtil.addOrder({ newOrders })
   },
 
   toMakeOrder() {
     const { defaultAddress } = this.data
-    console.log(defaultAddress);
     if (!defaultAddress) {
       wx.showToast({
         title: '请选择地址',
         icon: "error"
       })
-    }else{
+    } else {
       this.setData({
         isShowPay: true
       })
     }
   },
 
-  comfirmPay() {
+  confirmPay(status) {
+    const that = this
     wx.showLoading()
-    setTimeout(() => {
-      const that = this
-      wx.hideLoading()
-      wx.showToast({
-        title: '支付成功',
-        icon: "success",
-        success() {
-          setTimeout(() => {
-            that.setData({
-              isShowPay: false
-            }, () => {
-              setTimeout(() => {
-                wx.setStorageSync('comfirmOrderData', null)
-                wx.setStorageSync('addressId', null)
-                wx.navigateBack()
-              }, 500)
-            })
-          }, 500)
-        }
+    this.makeOrder(WILLDELIVERY)
+      .then(res => {
+        wx.hideLoading()
+        wx.showToast({
+          title: '支付成功',
+          icon: "success",
+          success() {
+            setTimeout(() => {
+              that.setData({
+                isShowPay: false
+              }, () => {
+                setTimeout(() => {
+                  wx.setStorageSync('confirmOrderData', null)
+                  wx.setStorageSync('addressId', null)
+                  wx.setStorageSync("hasFinishedOrder", true)
+                  wx.navigateBack()
+                }, 500)
+              })
+            }, 500)
+          }
+        })
+      }, () => {
+        wx.hideLoading()
+        wx.showToast({
+          title: '支付失败',
+          icon: "error"
+        })
       })
-    }, 1000)
   },
 
   onClosePay() {
@@ -80,11 +134,25 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确认取消支付吗',
-      success() {
-        that.setData({
-          isShowPay: false
-        })
-      }
+      success(res) {
+        if (res.confirm) {
+          wx.showLoading({
+            title: '加载中',
+          })
+          that.makeOrder(WILLPAY)
+            .then(res => {
+              wx.hideLoading()
+              that.setData({
+                isShowPay: false
+              }, () => {
+                wx.setStorageSync("hasFinishedOrder", true)
+                wx.redirectTo({
+                  url: `/pages/person/pages/myOrder/index?active=willPay`,
+                })
+              })
+            })
+        }
+      },
     })
   },
 
@@ -107,7 +175,13 @@ Page({
    */
   onShow: function () {
     let { defaultAddress } = this.data
-    const data = wx.getStorageSync('comfirmOrderData')
+    const data = wx.getStorageSync('confirmOrderData')
+    if (!data) {
+      return wx.showToast({
+        title: '订单过期',
+        icon: "error"
+      })
+    }
     this.setData({
       ...data
     })

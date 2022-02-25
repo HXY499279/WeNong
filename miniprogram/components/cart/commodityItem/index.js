@@ -22,6 +22,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onRemarkInput(e) {
+      const { value } = e.detail
+      const { commodityid: commodityId } = e.currentTarget.dataset
+      this.triggerEvent("remarkInput", { value, commodityId })
+    }
   }
 })

@@ -1,7 +1,7 @@
 <search-bar bindnavBack="navBack" placeholder="搜索商品" value="{{content}}" bindinput="onInput" bindconfirm="confirmSearch"></search-bar>
 <page-loading wx:if="{{pageLoading}}"></page-loading>
 <view wx:else class="wraper">
-  <van-tabs sticky offset-top="{{88}}" color="#63BC51" bind:click="onTitleClick">
+  <van-tabs sticky offset-top="{{92}}" color="#63BC51" bind:click="onTitleClick">
     <van-tab title="综合">
       <commodity-item titleStyle="width:70%;" wx:for="{{zh}}" wx:key="index" item="{{item}}"></commodity-item>
       <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有商品哦~" />

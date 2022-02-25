@@ -1,0 +1,25 @@
+<view class="wraper">
+  <view class="top">
+    <view class="top-shop-wraper">
+      <van-icon class="top-shop-shopIcon" name="shop-o" />
+      <text class="top-shop-shopName">{{item.commodity.merchantInfo.shopName}}</text>
+      <van-icon class="top-shop-arrow" name="arrow" />
+    </view>
+    <text class="top-orderStatus">{{item.status}}</text>
+  </view>
+  <view class="content">
+    <view class="content-top">
+      <image class="content-img" src="{{item.commodity.picture[0]}}"></image>
+      <view class="content-detail">
+        <text class="content-detail-intro">{{item.commodity.name}} {{item.commodity.introduce}}</text>
+        <text class="content-detail-time">下单时间: {{item.addTime}}</text>
+        <text class="content-detail-totalPrice">总价:￥{{item.price * item.number}}</text>
+      </view>
+    </view>
+    <view class="content-bottom">
+      <button wx:if="{{hasCheckLogistics}}" class="content-bottom-btn" bindtap="bindCheckLogistics">查看物流</button>
+      <button wx:if="{{btn1Text}}" class="content-bottom-btn" bindtap="bindBtn1">{{btn1Text}}</button>
+      <button wx:if="{{btn2Text}}" class="content-bottom-btn" bindtap="bindBtn2">{{btn2Text}}</button>
+    </view>
+  </view>
+</view>

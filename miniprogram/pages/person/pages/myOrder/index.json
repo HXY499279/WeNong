@@ -1,0 +1,15 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "order-item": "/components/my/myOrder/orderItem/index",
+    "page-loading": "/components/pageLoading/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}

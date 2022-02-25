@@ -31,7 +31,7 @@ Page({
       title: '加载中',
     })
     const commoditiesData = carts
-    commoditiesData.forEach((merchant, i) => {
+    for (let [i, merchant] of Object.entries(commoditiesData)) {
       delete merchant.addTime
       merchant.commodities = []
       selectedCommodities.forEach(commodity => {
@@ -45,11 +45,11 @@ Page({
         merchant.merchantTotalPrice = merchant.commodities.reduce((a, b) => a + b.price * b.number, 0)
         merchant.merchantTotalNumber = merchant.commodities.reduce((a, b) => a + b.number, 0)
       }
-    })
+    }
     const totalNumber = commoditiesData.reduce((a, b) => a + b.merchantTotalNumber, 0)
     const { totalPrice } = this.data
     const sendData = { commoditiesData, totalNumber, totalPrice }
-    wx.setStorageSync('comfirmOrderData', sendData)
+    wx.setStorageSync('confirmOrderData', sendData)
     setTimeout(() => {
       wx.navigateTo({
         url: `/pages/cart/pages/makeOrder/index`,
@@ -216,6 +216,14 @@ Page({
             const { cartInfo: carts } = res.data
             console.log(carts);
             const total = carts.reduce((a, b) => a + b.commodities.length, 0)
+            const tag = wx.getStorageSync('hasFinishedOrder')
+            tag && this.setData({
+              selectedCommodities: [],
+              totalPrice: 0,
+              selectedAll: false
+            }, () => {
+              wx.setStorageSync("hasFinishedOrder", false)
+            })
             this.setData({
               total,
               loading: false,

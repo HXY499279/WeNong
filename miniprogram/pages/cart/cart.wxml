@@ -4,7 +4,6 @@
   <view wx:if="{{carts.length}}" class="content">
     <view class="item-wraper" wx:for="{{carts}}" wx:key="index" wx:for-item="merchant" wx:for-index="merchantIndex">
       <view class="merchant-info">
-        <!-- <switch type="checkbox" bindchange="onSelectedMerchantChange" class="select"></switch> -->
         <image class="merchant-info-head" src="{{merchant.merchantInfo.avatarUrl}}"></image>
         <text class="merchant-info-name">{{merchant.merchantInfo.shopName}}</text>
         <van-icon class="merchant-info-more" name="arrow" />

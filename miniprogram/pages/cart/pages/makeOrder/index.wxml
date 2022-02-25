@@ -17,16 +17,11 @@
     </view>
     <view class="item-wraper" wx:for="{{commoditiesData}}" wx:key="index" wx:for-item="merchant" wx:for-index="merchantIndex">
       <view class="merchant-info">
-        <!-- <switch type="checkbox" bindchange="onSelectedMerchantChange" class="select"></switch> -->
         <image class="merchant-info-head" src="{{merchant.merchantInfo.avatarUrl}}"></image>
         <text class="merchant-info-name">{{merchant.merchantInfo.shopName}}</text>
       </view>
       <view class="item" wx:for="{{merchant.commodities}}" wx:key="index" wx:for-item="commodity" wx:for-index="commodityIndex">
-        <commodity-item item="{{commodity}}"></commodity-item>
-      </view>
-      <view class="other">
-        <text class="other-title">订单备注:</text>
-        <input class="other-ipt" bindinput="onRemarkInput" type="text" placeholder="选填，请先与商家协商一致" />
+        <commodity-item item="{{commodity}}" bindremarkInput="bindRemarkInput"></commodity-item>
       </view>
     </view>
     <view class="footer">
@@ -44,7 +39,7 @@
               <text>支付方式</text> <text>钱包</text>
             </view>
           </view>
-          <van-button bindtap="comfirmPay" custom-style="margin:0 auto;width:315px" type="primary" block color='linear-gradient(to right, #4bb0ff, #6149f6)'>
+          <van-button bindtap="confirmPay" custom-style="margin:0 auto;width:315px" type="primary" block color='linear-gradient(to right, #4bb0ff, #6149f6)'>
             确认付款
           </van-button>
         </view>

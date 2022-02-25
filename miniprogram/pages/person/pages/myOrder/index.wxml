@@ -1,0 +1,56 @@
+<van-tabs sticky swipeable color="#0EAB40" active="{{active}}" bind:change="onChange">
+  <van-tab name="{{ALLORDERS}}" title="全部订单">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[ALLORDERS].length}}">
+        <order-item wx:for="{{data[ALLORDERS]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+  <van-tab name="{{WILLPAY}}" title="待支付">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[WILLPAY].length}}">
+        <order-item wx:for="{{data[WILLPAY]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+  <van-tab name="{{WILLDELIVERY}}" title="待发货">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[WILLDELIVERY].length}}">
+        <order-item wx:for="{{data[WILLDELIVERY]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+  <van-tab name="{{WILLRECEIVE}}" title="待收货">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[WILLRECEIVE].length}}">
+        <order-item wx:for="{{data[WILLRECEIVE]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+  <van-tab name="{{FINISHED}}" title="已完成">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[FINISHED].length}}">
+        <order-item wx:for="{{data[FINISHED]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+  <van-tab name="{{REFUNDED}}" title="退货退款">
+    <van-loading class="loading" color="#777" size="45px" vertical="{{true}}" wx:if="{{loading}}">加载中...</van-loading>
+    <view wx:else>
+      <view wx:if="{{data[REFUNDED].length}}">
+        <order-item wx:for="{{data[REFUNDED]}}" wx:key="index" item="{{item}}" hasCheckLogistics="{{true}}" bindcheckLogistics="bindCheckLogistics" btn1Text="再来一单" bindbtn1="" btn2Text="去评价" bindbtn2=""></order-item>
+      </view>
+      <van-empty wx:else description="还没有订单哦~" />
+    </view>
+  </van-tab>
+</van-tabs>

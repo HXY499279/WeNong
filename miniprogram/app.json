@@ -19,7 +19,8 @@
     "pages/category/pages/searchResult/index",
     "pages/index/pages/toAdopt/index",
     "pages/index/pages/nearbyFarm/index",
-    "pages/index/pages/agricultureInfo/index"
+    "pages/index/pages/agricultureInfo/index",
+    "pages/person/pages/myOrder/index"
   ],
   "window": {
     "navigationStyle": "custom",

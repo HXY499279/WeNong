@@ -47,7 +47,12 @@ class HttpUtil {
   changeFruitPlantInfo = (params) => httpReq('FruitPlant', "changeFruitPlantInfo", params, true)
   deleteFruitPlant = (params) => httpReq('FruitPlant', "deleteFruitPlant", params, true)
   addFruitPlant = (params) => httpReq('FruitPlant', "addFruitPlant", params, true)
-  
+
+  // 订单模块 
+  getOrderInfo = (params) => httpReq('Order', "getOrderInfo", params, true)
+  changeOrderInfo = (params) => httpReq('Order', "changeOrderInfo", params, true)
+  deleteOrder = (params) => httpReq('Order', "deleteOrder", params, true)
+  addOrder = (params) => httpReq('Order', "addOrder", params, true)
 
 }
 

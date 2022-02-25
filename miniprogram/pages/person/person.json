@@ -7,6 +7,6 @@
     "van-button": "@vant/weapp/button/index",
     "login-status-frame": "/components/my/loginStatusFrame/index",
     "my-item-frame": "/components/my/myItemFrame/index",
-    "my-order": "/components/my/myOrder/index"
+    "my-order-frame": "/components/my/myOrder/myOrderFrame/index"
   }
 }

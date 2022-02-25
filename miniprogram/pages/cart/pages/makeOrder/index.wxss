@@ -86,23 +86,6 @@
   margin: 0 7rpx 0 22rpx;
 }
 
-.other {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  margin-bottom: 15rpx;
-}
-
-.other-title {
-  width: 170rpx;
-  text-align: end;
-}
-
-.other-ipt {
-  width: 70%;
-}
-
 .footer {
   position: fixed;
   width: 94%;

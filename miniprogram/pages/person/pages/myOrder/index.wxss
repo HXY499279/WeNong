@@ -1,0 +1,17 @@
+.van-tabs__scroll{
+  background-color: #F5F5F5 !important;
+}
+.van-tab__pane {
+  position: relative;
+  min-height: 96vh !important; 
+  padding-bottom: 20rpx;
+  background-color: #F5F5F5 !important;
+}
+
+.loading{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: black;
+}
