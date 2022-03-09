@@ -20,6 +20,6 @@ App({
     }
   },
   onShow: function () {
-    httpUtil.checkLogin()
+    // httpUtil.checkLogin()
   }
 });

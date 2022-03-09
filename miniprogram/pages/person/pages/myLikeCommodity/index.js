@@ -13,6 +13,13 @@ Page({
     loading: true
   },
 
+  toCommodity(e) {
+    const { commodityid: commodityId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/commodity/index?commodityId=${commodityId}`,
+    })
+  },
+
   onSearch(e) {
     let { commodities } = this.data
     const value = e.detail.value;

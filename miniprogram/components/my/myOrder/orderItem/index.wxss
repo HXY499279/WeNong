@@ -33,7 +33,7 @@
 }
 
 .top-orderStatus {
-  color: silver;
+  color: rgb(227,108,59);
 }
 
 .content {
@@ -49,6 +49,10 @@
   height: 180rpx;
   align-items: center;
   margin-bottom: 20rpx;
+}
+
+.cutDownTime{
+  color: #a91c1c;
 }
 
 .content-img {
@@ -94,8 +98,4 @@
   padding: 0 10rpx;
   margin: 0 20rpx 0 0;
   background-color: white;
-}
-
-.content-bottom-btn:last-child{
-  margin: 0;
 }

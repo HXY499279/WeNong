@@ -47,6 +47,11 @@ Component({
         icon: "shop-collect-o",
         title: "我关注的店铺",
         onTap: "toMyLikeShop"
+      },
+      {
+        icon: "info-o",
+        title: "关于We农",
+        onTap: "toAboutWeNong"
       }
     ]
   },
@@ -106,6 +111,12 @@ Component({
             url: '/pages/person/pages/myLikeShop/index',
           })
         })
+    },
+    // 我关注的店铺
+    toAboutWeNong() {
+      wx.navigateTo({
+        url: '/pages/person/pages/aboutWeNong/index',
+      })
     }
   }
 })

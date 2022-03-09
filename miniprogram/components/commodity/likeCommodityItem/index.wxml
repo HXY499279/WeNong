@@ -3,7 +3,7 @@
   <view class="item-title">
     <text class="item-title-top">{{item.name}} {{item.introduce}}</text>
     <text class="item-title-span">
-      <text class="item-title-span-hp">好评率{{item.positiveRatings}}</text>
+      <text class="item-title-span-hp">好评率{{item.positiveRatings * 100}}%</text>
       <text class="item-title-span-hp">总销量{{item.sales}}</text>
     </text>
     <text class="item-title-price">

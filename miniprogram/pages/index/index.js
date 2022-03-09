@@ -10,13 +10,13 @@ Page({
     infoNum: 0
   },
 
-  toAgricultureInfo(){
+  toAgricultureInfo() {
     wx.navigateTo({
       url: '/pages/index/pages/agricultureInfo/index',
     })
   },
 
-  toNearbyFarm(){
+  toNearbyFarm() {
     wx.navigateTo({
       url: '/pages/index/pages/nearbyFarm/index',
     })
@@ -38,6 +38,13 @@ Page({
     const { keyword, content } = e.currentTarget.dataset
     wx.navigateTo({
       url: `/pages/category/pages/searchResult/index?content=${content}&keyword=${keyword}&itemName=categoryId`,
+    })
+  },
+
+  toCommodity(e) {
+    const { commodityid: commodityId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/commodity/index?commodityId=${commodityId}`,
     })
   },
 

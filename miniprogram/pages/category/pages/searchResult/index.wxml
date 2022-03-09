@@ -3,15 +3,15 @@
 <view wx:else class="wraper">
   <van-tabs sticky offset-top="{{92}}" color="#63BC51" bind:click="onTitleClick">
     <van-tab title="综合">
-      <commodity-item titleStyle="width:70%;" wx:for="{{zh}}" wx:key="index" item="{{item}}"></commodity-item>
+      <commodity-item titleStyle="width:70%;" wx:for="{{zh}}" wx:key="index" item="{{item}}" data-commodityId="{{item._id}}" bindtap="toCommodity"></commodity-item>
       <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有商品哦~" />
     </van-tab>
     <van-tab title="销量">
-      <commodity-item titleStyle="width:70%;" wx:for="{{xl}}" wx:key="index" item="{{item}}"></commodity-item>
+      <commodity-item titleStyle="width:70%;" wx:for="{{xl}}" wx:key="index" item="{{item}}" data-commodityId="{{item._id}}" bindtap="toCommodity"></commodity-item>
       <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有商品哦~" />
     </van-tab>
     <van-tab name="jg" title="价格">
-      <commodity-item titleStyle="width:70%;" wx:for="{{jg}}" wx:key="index" item="{{item}}"></commodity-item>
+      <commodity-item titleStyle="width:70%;" wx:for="{{jg}}" wx:key="index" item="{{item}}" data-commodityId="{{item._id}}" bindtap="toCommodity"></commodity-item>
       <van-empty wx:if="{{!data.length}}" class="custom-image" description="没有商品哦~" />
     </van-tab>
   </van-tabs>

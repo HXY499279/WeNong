@@ -16,7 +16,7 @@ const httpReq = async (feature, url, data = {}, isAuth) => {
       } else {
         reject(result.message)
       }
-    }, err => {
+    }, (err) => {
       reject(err)
     }).catch(err => {
       console.error("请求异常")
@@ -46,7 +46,11 @@ const httpReq = async (feature, url, data = {}, isAuth) => {
         })
       })
     } else {
+      wx.navigateTo({
+        url: '/pages/person/pages/loginSwitch/index',
+      })
       console.log("未登录");
+      return Promise.reject("未登录")
     }
   } else {
     return req

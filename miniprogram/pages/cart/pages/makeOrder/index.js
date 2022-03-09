@@ -5,7 +5,8 @@ import {
   WILLRECEIVE,
   FINISHED,
   REFUNDED,
-  ALLORDERS
+  ALLORDERS,
+  WILLPAY_ORDER_MAX_TIME
 } from '../../../../utils/constant'
 
 // pages/cart/pages/makeOrder/index.js
@@ -52,7 +53,7 @@ Page({
     // 获取下单时间
     const date = new Date()
     const year = date.getUTCFullYear()
-    const month = date.getUTCMonth()
+    const month = date.getUTCMonth() + 1
     const day = date.getUTCDate()
     const hour = date.getHours()
     const min = date.getUTCMinutes()
@@ -71,7 +72,7 @@ Page({
           number: commodity.number,
           heavy: commodity.heavy,
           price: commodity.price,
-          totalPrice: (commodity.number * commodity.price).toFixed(2),
+          totalPrice: (commodity.number * commodity.price).toFixed(2) * 1,
           addTime,
           remark: remarks[commodity._id] || "",
           status
@@ -98,6 +99,7 @@ Page({
 
   confirmPay(status) {
     const that = this
+    let { dataName, addressName, fromOrderWillPay, orderId } = this.data
     wx.showLoading()
     this.makeOrder(WILLDELIVERY)
       .then(res => {
@@ -106,18 +108,44 @@ Page({
           title: '支付成功',
           icon: "success",
           success() {
-            setTimeout(() => {
+            if (fromOrderWillPay) {
+              // 在待支付中删除该订单
+              httpUtil.deleteOrder({ _id: orderId })
+                .then(res => {
+                  that.setData({
+                    isShowPay: false
+                  }, () => {
+                    setTimeout(() => {
+                      // 关闭倒计时器
+                      clearInterval(wx.getStorageSync(`countDownTimer-${orderId}`))
+                      // 清除定时器和时间的缓存
+                      wx.setStorageSync(`countDownTime-${orderId}`, null)
+                      wx.setStorageSync(`countDownTimer-${orderId}`, null)
+                      // 清空数据缓存
+                      wx.setStorageSync(dataName, null)
+                      wx.setStorageSync(addressName, null)
+                      wx.setStorageSync("confirmOrderData", null)
+                      wx.setStorageSync("addressId", null)
+                      wx.setStorageSync("hasFinishedOrder", true)
+                      wx.redirectTo({
+                        url: `/pages/person/pages/myOrder/index?active=${WILLDELIVERY}`,
+                      })
+                    }, 500)
+                  })
+                })
+            } else {
               that.setData({
                 isShowPay: false
               }, () => {
                 setTimeout(() => {
-                  wx.setStorageSync('confirmOrderData', null)
-                  wx.setStorageSync('addressId', null)
+                  // 清空缓存
+                  wx.setStorageSync("confirmOrderData", null)
+                  wx.setStorageSync("addressId", null)
                   wx.setStorageSync("hasFinishedOrder", true)
                   wx.navigateBack()
                 }, 500)
               })
-            }, 500)
+            }
           }
         })
       }, () => {
@@ -131,11 +159,18 @@ Page({
 
   onClosePay() {
     const that = this
+    const { fromOrderWillPay } = this.data
     wx.showModal({
       title: '提示',
       content: '确认取消支付吗',
       success(res) {
         if (res.confirm) {
+          if (fromOrderWillPay) {
+            that.setData({
+              isShowPay: false
+            })
+            return
+          }
           wx.showLoading({
             title: '加载中',
           })
@@ -145,9 +180,11 @@ Page({
               that.setData({
                 isShowPay: false
               }, () => {
+                wx.setStorageSync('confirmOrderData', null)
+                wx.setStorageSync('addressId', null)
                 wx.setStorageSync("hasFinishedOrder", true)
                 wx.redirectTo({
-                  url: `/pages/person/pages/myOrder/index?active=willPay`,
+                  url: `/pages/person/pages/myOrder/index?active=${WILLPAY}&fromCart=true`,
                 })
               })
             })
@@ -160,7 +197,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const { dataName = "confirmOrderData", addressName = "addressId", fromOrderWillPay = "false", orderId = "orderId" } = options
+    this.setData({
+      dataName,
+      addressName,
+      fromOrderWillPay: fromOrderWillPay === "true" ? true : false,
+      orderId
+    })
   },
 
   /**
@@ -174,8 +217,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let { defaultAddress } = this.data
-    const data = wx.getStorageSync('confirmOrderData')
+    let { defaultAddress, dataName, addressName } = this.data
+    const data = wx.getStorageSync(dataName)
     if (!data) {
       return wx.showToast({
         title: '订单过期',
@@ -185,7 +228,8 @@ Page({
     this.setData({
       ...data
     })
-    const addressId = wx.getStorageSync('addressId') || undefined
+    const addressId = wx.getStorageSync('addressId') || wx.getStorageSync(addressName)
+    console.log(addressId);
     const query = addressId ? { _id: addressId } : { isDefault: 1 }
     httpUtil.getAddressInfo({ query })
       .then(res => {

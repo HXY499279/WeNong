@@ -8,19 +8,30 @@ const db = cloud.database()
 
 exports.main = async (event, context) => {
 
-  const { OPENID: userId, query: conditions = { status: "allOrders" } } = event
+  const { OPENID: userId, query: conditions = { status: "allOrders", skip: 0 } } = event
 
   try {
     const query = { userId, ...conditions }
     let orders = []
     if (query.status === "allOrders") {
-      const res = await db.collection("orders").where({ userId }).get()
+      let res = null
+      query.limit ? res = await db.collection("orders").where({ userId }).skip(query.skip).limit(query.limit).get() : res = await db.collection("orders").where({ userId }).skip(query.skip).get()
       orders = res.data
+    } else if (query.status === "finished") {
+      const res1 = await db.collection("orders").where({ userId, status: "willEvaluate" }).get()
+      const res2 = await db.collection("orders").where({ userId, status: "evaluated" }).get()
+      orders = [...res1.data, ...res2.data]
+    } else if (query.status === "return") {
+      const res1 = await db.collection("orders").where({ userId, status: "returnMoneyRequest" }).get()
+      const res2 = await db.collection("orders").where({ userId, status: "returnCommodityRequest" }).get()
+      const res3 = await db.collection("orders").where({ userId, status: "willRefund" }).get()
+      const res4 = await db.collection("orders").where({ userId, status: "refunded" }).get()
+      orders = [...res1.data, ...res2.data, ...res3.data, ...res4.data]
     } else {
-      const res = await db.collection("orders").where(query).get()
+      const res = await db.collection("orders").where({ userId, status: query.status }).get()
       orders = res.data
     }
-    orders.sort((a, b) => b.compareTime - a.compareTime)
+    (query.status === "finished" || query.status === "return") ? 0 : orders.sort((a, b) => b.compareTime - a.compareTime)
     for (let order of orders) {
       // 获取地址
       const addressesData = await cloud.callFunction({

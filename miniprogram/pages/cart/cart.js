@@ -9,6 +9,7 @@ Page({
    */
   data: {
     total: 0,
+    firstShow: true,
     loading: true,
     carts: [],
     selectedCommodities: [],
@@ -192,7 +193,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      firstShow: true
+    })
   },
 
   /**
@@ -206,29 +209,35 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    const { firstShow } = this.data
     this.getTabBar().setData({
       active: 2
+    })
+    const tag = wx.getStorageSync('hasFinishedOrder');
+    (tag || !firstShow) && wx.showLoading({
+      title: '加载中',
     })
     checkLogin()
       .then(() => {
         httpUtil.getCartInfo()
           .then(res => {
             const { cartInfo: carts } = res.data
-            console.log(carts);
             const total = carts.reduce((a, b) => a + b.commodities.length, 0)
-            const tag = wx.getStorageSync('hasFinishedOrder')
             tag && this.setData({
               selectedCommodities: [],
               totalPrice: 0,
               selectedAll: false
             }, () => {
+              wx.hideLoading()
               wx.setStorageSync("hasFinishedOrder", false)
             })
             this.setData({
               total,
               loading: false,
+              firstShow: false,
               carts
             })
+            wx.hideLoading()
           })
       })
   },

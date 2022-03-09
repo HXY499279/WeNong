@@ -36,6 +36,13 @@ Component({
       const { merchantIndex, commodityIndex } = this.data
       const { commodityid: commodityId } = e.currentTarget.dataset
       this.triggerEvent("numberChange", { commodityId, number, merchantIndex, commodityIndex })
-    }
+    },
+    
+    toCommodity(e) {
+      const { commodityid: commodityId } = e.currentTarget.dataset
+      wx.navigateTo({
+        url: `/pages/commodity/index?commodityId=${commodityId}`,
+      })
+    },
   }
 })

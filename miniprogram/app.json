@@ -20,7 +20,10 @@
     "pages/index/pages/toAdopt/index",
     "pages/index/pages/nearbyFarm/index",
     "pages/index/pages/agricultureInfo/index",
-    "pages/person/pages/myOrder/index"
+    "pages/person/pages/myOrder/index",
+    "pages/commodity/index",
+    "pages/commodity/pages/evaluateList/index",
+    "pages/person/pages/aboutWeNong/index"
   ],
   "window": {
     "navigationStyle": "custom",

@@ -11,14 +11,14 @@ exports.main = async (event, context) => {
   const { OPENID: userId, newInfo } = event
 
   try {
-    const { commodityId, number } = newInfo
+    const { commodityId, number = 1 } = newInfo
 
     // 先看新加的商品是否已存在购物车中
-    const res = await db.collection("carts").where({ commodityId }).get()
+    const res = await db.collection("carts").where({ commodityId, userId }).get()
     const resCart = res.data[0]
     if (resCart) {
       const addTime = new Date().getTime() / 60000
-      await db.collection("carts").where({ commodityId }).update({
+      await db.collection("carts").where({ commodityId, userId }).update({
         data: {
           addTime,
           number: resCart.number + number
@@ -30,6 +30,7 @@ exports.main = async (event, context) => {
         data: {
           userId,
           ...newInfo,
+          number,
           addTime
         }
       })

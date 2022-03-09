@@ -10,6 +10,8 @@ class HttpUtil {
   changeUserInfo = (params) => httpReq('User', "changeUserInfo", params, true)
   getUserLikeShop = (params) => httpReq('User', "getUserLikeShop", params, true)
   getUserLikeCommodity = (params) => httpReq('User', "getUserLikeCommodity", params, true)
+  addUserLikeCommodity = (params) => httpReq('User', "addUserLikeCommodity", params, true)
+  removeUserLikeCommodity = (params) => httpReq('User', "removeUserLikeCommodity", params, true)
 
   // 商家模块
   applyForMerchant = (params) => httpReq('Merchant', "applyForMerchant", params, true)
@@ -53,6 +55,10 @@ class HttpUtil {
   changeOrderInfo = (params) => httpReq('Order', "changeOrderInfo", params, true)
   deleteOrder = (params) => httpReq('Order', "deleteOrder", params, true)
   addOrder = (params) => httpReq('Order', "addOrder", params, true)
+
+  // 评价模块
+  getEvaluateInfo = (params) => httpReq('Evaluate', "getEvaluateInfo", params, true)
+  
 
 }
 

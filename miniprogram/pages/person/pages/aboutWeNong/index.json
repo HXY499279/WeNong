@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "关于",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#0EAB40",
+  "backgroundColorTop": "#0EAB40",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {}
+}

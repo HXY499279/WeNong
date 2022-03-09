@@ -7,7 +7,7 @@
   <page-loading class="content" wx:if="{{commodityLoading}}"></page-loading>
   <view wx:else class="content">
     <view class="commodities" wx:if="{{categoryToCommodities[showCategory]?categoryToCommodities[showCategory].length:0}}">
-      <commodity-item wx:for="{{categoryToCommodities[showCategory]}}" wx:key="index" item="{{item}}"></commodity-item>
+      <commodity-item wx:for="{{categoryToCommodities[showCategory]}}" wx:key="index" item="{{item}}"  data-commodityId="{{item._id}}" bindtap="toCommodity"></commodity-item>
     </view>
     <view wx:else>
       <van-empty class="empty" description="没有商品哦~" />

@@ -1,7 +1,7 @@
 <view class="wraper">
   <image class="logo" src="/resources/logo.png"></image>
   <van-button wx:if="{{!isAgree}}" bindtap="comfirmAgree" round custom-style="margin-bottom:280rpx;" type="primary" block>
-    微信快捷登登录
+    微信快捷登录
   </van-button>
   <van-button wx:else open-type="getUserInfo" bind:getuserinfo="getUserInfo" round custom-style="margin-bottom:280rpx;" type="primary" block>
     微信快捷登录

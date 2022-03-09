@@ -11,8 +11,8 @@ exports.main = async (event, context) => {
   const { OPENID: userId, _id } = event
 
   try {
-    // 删除地址
-    await db.collection('addresses').where({
+    // 删除订单
+    await db.collection('orders').where({
       userId,
       _id
     }).remove()

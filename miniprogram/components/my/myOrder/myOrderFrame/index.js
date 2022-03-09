@@ -4,7 +4,7 @@ import {
   WILLDELIVERY,
   WILLRECEIVE,
   FINISHED,
-  REFUNDED,
+  RETURN,
   ALLORDERS
 } from '../../../../utils/constant'
 
@@ -103,7 +103,7 @@ Component({
       checkLogin()
         .then(() => {
           wx.navigateTo({
-            url: `/pages/person/pages/myOrder/index?active=${REFUNDED}`,
+            url: `/pages/person/pages/myOrder/index?active=${RETURN}`,
           })
         })
     },

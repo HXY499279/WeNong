@@ -53,6 +53,13 @@ Page({
     })
   },
 
+  toCommodity(e) {
+    const { commodityid: commodityId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/commodity/index?commodityId=${commodityId}`,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

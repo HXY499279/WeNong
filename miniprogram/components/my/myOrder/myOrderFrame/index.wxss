@@ -26,8 +26,8 @@
 
 .order-item {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   width: 125rpx;
   height: 120rpx;

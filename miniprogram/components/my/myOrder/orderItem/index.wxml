@@ -5,6 +5,10 @@
       <text class="top-shop-shopName">{{item.commodity.merchantInfo.shopName}}</text>
       <van-icon class="top-shop-arrow" name="arrow" />
     </view>
+    <view wx:if="{{hasCountDownTime}}" class="cutDownTime">
+      <text wx:if="{{countDownTime}}">{{countDownTime}}</text>
+      <van-loading wx:else />
+    </view>
     <text class="top-orderStatus">{{item.status}}</text>
   </view>
   <view class="content">

@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "default",
+  "navigationBarTitleText": "评价",
+  "navigationBarBackgroundColor":"#F5F5F5",
+  "backgroundColorTop": "#F5F5F5",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {
+    "evaluate-item": "/components/evaluate/evaluateItem/index",
+    "page-loading": "/components/pageLoading/index"
+  }
+}

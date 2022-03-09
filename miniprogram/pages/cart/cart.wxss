@@ -80,11 +80,11 @@
 .footer {
   position: fixed;
   width: 94%;
-  height: 90rpx;
+  height: 80rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20rpx 25rpx 189rpx;
+  padding: 20rpx 25rpx 170rpx;
   bottom: 0;
   background-color: white;
 }

@@ -1,0 +1,19 @@
+{
+  "backgroundTextStyle": "light",
+  "backgroundColorTop": "#FFF",
+  "backgroundColorBottom": "#F5F5F5",
+  "usingComponents": {
+    "commodity-bar": "/components/bars/commodityBar/index",
+    "evaluate-item": "/components/evaluate/evaluateItem/index",
+    "page-loading": "/components/pageLoading/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-skeleton": "@vant/weapp/skeleton/index"
+  }
+}

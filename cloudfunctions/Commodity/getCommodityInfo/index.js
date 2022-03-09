@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
 
   const { query = {}, skip, limit } = event
   try {
-    const res = skip || limit ? await db.collection("commodities").where(query).skip(skip).limit(limit).get() : await db.collection("commodities").where(query).get()
+    const res = (skip || limit) ? await db.collection("commodities").where(query).skip(skip).limit(limit).get() : await db.collection("commodities").where(query).get()
     const commodities = res.data
     const retData = []
     if (commodities.length) {
@@ -26,7 +26,7 @@ exports.main = async (event, context) => {
         })
         const { merchantInfo } = result.data
         // 获取分类名
-        const item = await db.collection("categories").where({_id:categoryId}).get()
+        const item = await db.collection("categories").where({ _id: categoryId }).get()
         const { categoryName } = item.data[0]
 
         retData.push({ ...commodity, merchantInfo, categoryName })

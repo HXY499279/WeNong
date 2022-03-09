@@ -128,6 +128,27 @@
           "name": "我的订单",
           "pathName": "pages/person/pages/myOrder/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "商品页面",
+          "pathName": "pages/commodity/index",
+          "query": "commodityId=ea795837620cc84d01f728b437c596bc",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "评价浏览页面",
+          "pathName": "pages/commodity/pages/evaluateList/index",
+          "query": "commodityId=ea795837620cc84d01f728b437c596bc",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "关于",
+          "pathName": "pages/person/pages/aboutWeNong/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

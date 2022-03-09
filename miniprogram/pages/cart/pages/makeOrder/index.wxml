@@ -31,7 +31,7 @@
           提交订单
         </van-button>
       </view>
-      <van-action-sheet show="{{ isShowPay }}" bind: bind:close="onClosePay" title="支付">
+      <van-action-sheet show="{{ isShowPay }}"  bind:close="onClosePay" title="支付">
         <view class="pay-content">
           <view class="pay-detail">
             <text class="pay-money">￥<text class="pay-money-number">{{totalPrice}}</text></text>

@@ -1,0 +1,14 @@
+<view class="item">
+  <view class="item-top">
+    <view class="item-top-header-wraper">
+      <image class="item-top-header" src="{{item.userInfo.avatarUrl}}"></image>
+      <text class="item-top-name">{{item.userInfo.nickName}}</text>
+    </view>
+    <van-rate disabled="{{true}}" disabled-color="#EE0A24" value="{{ item.totalScore }}" />
+  </view>
+  <view class="item-top-time" wx:if="{{isShowMore}}">{{item.evaluateTime}}</view>
+  <view class="item-bottom">{{item.evaluateContent}}</view>
+  <view wx:if="{{isShowMore}}">
+    <image class="item-pic" wx:for="{{item.picUrl}}" wx:key="index" src="{{item}}" />
+  </view>
+</view>

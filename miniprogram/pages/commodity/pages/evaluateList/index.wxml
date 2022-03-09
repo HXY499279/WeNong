@@ -1,0 +1,9 @@
+<page-loading wx:if="{{pageLoading}}"></page-loading>
+<view wx:else class="wraper">
+  <view class="content">
+    <view class="select"></view>
+    <view class="evaluate-item-wraper" wx:for="{{evaluateList}}" wx:key="index">
+      <evaluate-item class="evaluate-item" isShowMore="{{true}}" item="{{item}}"></evaluate-item>
+    </view>
+  </view>
+</view>

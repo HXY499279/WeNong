@@ -1,0 +1,15 @@
+.wraper{
+  background-color: #F5F5F5;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  margin: 20rpx auto;
+}
+
+.evaluate-item-wraper{
+  padding: 20rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+}

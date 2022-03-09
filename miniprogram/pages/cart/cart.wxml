@@ -8,7 +8,7 @@
         <text class="merchant-info-name">{{merchant.merchantInfo.shopName}}</text>
         <van-icon class="merchant-info-more" name="arrow" />
       </view>
-      <van-swipe-cell class="swipeCell" wx:for="{{merchant.commodities}}" wx:key="index" wx:for-item="commodity" wx:for-index="commodityIndex" right-width="{{ 80 }}" async-close>
+      <van-swipe-cell class="swipeCell" wx:for="{{merchant.commodities}}" wx:key="_id" wx:for-item="commodity" wx:for-index="commodityIndex" right-width="{{ 80 }}" async-close>
         <van-cell-group>
           <view class="item">
             <switch type="checkbox" checked="{{selectedAll}}" data-commodityId="{{commodity._id}}" data-merchantIndex="{{merchantIndex}}" data-commodityIndex="{{commodityIndex}}" bindchange="onSelectedCommodityChange" class="select"></switch>

@@ -32,7 +32,7 @@
   <view class="content-wraper box">
     <van-skeleton wx:if="{{!commodityData.length}}" title row="12" />
     <view wx:else class="content">
-      <commodity-item titleStyle="width:69%;" wx:for="{{commodityData}}" wx:key="index" item="{{item}}"></commodity-item>
+      <commodity-item titleStyle="width:69%;" data-commodityId="{{item._id}}" bindtap="toCommodity" wx:for="{{commodityData}}" wx:key="index" item="{{item}}"></commodity-item>
     </view>
   </view>
 </view>
